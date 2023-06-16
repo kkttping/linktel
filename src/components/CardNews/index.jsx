@@ -7,20 +7,20 @@ export default function CardNews(props) {
     const{title,infoList,img,link}=props
     return (
         <div className='card_news'>
-            <Row justify={'center'}>
-                <Col>
-                    <div className='infomation'>
-                        <div className='title'>{title}</div>
+            <Row justify={'center'} className='newstable'>
+                <Col className='newsleft'>
+                    <div className='infomation'onClick={link} >
+                        <div className='title' >{title}</div>
                         <div className='info'>
                             {infoList?.map(item=>{
                                 return (<span key={item}>{item} <br/></span>)
                             })}
                             </div>
-                        <span className='morehover' onClick={link}>READ MORE</span>
+                        <span className='readmore' onClick={link}>READ MORE<span></span></span>
 
                     </div>
                 </Col>
-                <Col>
+                <Col className='newsright'>
                     <div className='img'>
                         <img src={img} alt="" />
                         {/* <div className='news_card'>

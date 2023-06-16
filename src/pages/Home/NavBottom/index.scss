@@ -44,7 +44,8 @@
 
     .about_nav {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
+        margin-right: 100px;
         gap:0;
 
         div {

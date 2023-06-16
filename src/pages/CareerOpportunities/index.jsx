@@ -33,7 +33,7 @@ export default function CareerOpportunities() {
             <CareerNav />
             <div className='content'>
 
-                <Row justify={"center"}>
+                <Row justify={"center"} className='creertable'>
                     {info.map((item, index) => {
                         return (
                             <Col key={index}>

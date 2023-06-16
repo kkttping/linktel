@@ -126,7 +126,10 @@ export default function Products2() {
                                                 <div className='info_item'>
                                                     <span>{item?.name}</span>
                                                     <span dangerouslySetInnerHTML={{ __html: item?.description }}></span>
-                                                    <span className='readmore' onClick={() => toProducts3(item?.id)}>READ MORE<span></span></span>
+                                                    <span className='readmore' onClick={() => {
+                                                        toProducts3(item?.id); // retain the original action
+                                                        document.querySelector('#top').scrollIntoView(); // scroll to #top
+                                                    }}>READ MORE<span></span></span>
 
                                                 </div>
                                             </Col>
