@@ -67,7 +67,7 @@ export default function CardOpportunities(props) {
         <div className='card_opportunities'>
             {contextHolder}
 
-            <span className='read_more' onClick={() => { setIsModalOpen(true) }}>READ MORE <span></span></span>
+            <span className='readmore' onClick={() => { setIsModalOpen(true) }}>READ MORE <span></span></span>
             <div>
                 <div className="title_tag">Position</div>
                 <div className="title">{data?.position}</div>

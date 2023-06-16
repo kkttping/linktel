@@ -72,7 +72,7 @@ export default function AboutLeadership() {
             <div className='leader_item'>
                 <div className='title'>{text1}</div>
                 
-                    <Row justify={"center"}>
+                    <Row justify={"center"} className='leadertable'>
                         {leadershipList.map((item, index) => {
                             if (item.testj === id) {
                                 return (
