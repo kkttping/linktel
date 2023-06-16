@@ -96,7 +96,7 @@ export default function AboutHome() {
                                     <div className='leadership_name'><div className='person_svg'></div>{leadershipList[imgSelect]?.Name}</div>
                                     <div className='leadership_work'>{leadershipList[imgSelect]?.Position}</div>
                                     <div className='leadership_info' dangerouslySetInnerHTML={{ __html: leadershipList[imgSelect]?.Introduce?.replace(/\n/g, "<br/>") }}></div>
-                                    <span onClick={() => { toPage('leadership', leadershipList[imgSelect]?.id) }}>READ MORE</span>
+                                    <span className='readmore' onClick={() => { toPage('leadership', leadershipList[imgSelect]?.id) }}>READ MORE<span></span></span>
 
                                 </div>
                                 <div className="select_img">
@@ -135,7 +135,7 @@ export default function AboutHome() {
                                                 <div className='news_info'>{news
                                                     .Title
                                                 }</div>
-                                                <span onClick={() => toPage2('newsInfo', news.id + '/' + news.type)}>MORE</span>
+                                                <span className='readmore' onClick={() => toPage2('newsInfo', news.id + '/' + news.type)}>READ MORE<span></span></span>
                                             </div>
                                         )}
 
@@ -162,7 +162,7 @@ export default function AboutHome() {
                                 <div className='responsibility_info'>
                                     Linktel and MultiLane Showcase a 2xFR4 OSFP Transceiver Demo with Live 800G BERT Traffic at OFC 2022
                                 </div>
-                                <span className='readmore' onClick={() => { toPage('responsibility', 'about') }}>MORE<span> </span></span>
+                                <span className='readmore' onClick={() => { toPage('responsibility', 'about') }}>READ MORE<span> </span></span>
 
                             </div>
                         </Col>
@@ -176,7 +176,7 @@ export default function AboutHome() {
                                     Linktel USA<br />
                                     Linktel Malaysia
                                 </div>
-                                <span className='readmore' onClick={() => { toPage('contact', 'about') }}>MORE<span></span></span>
+                                <span className='readmore' onClick={() => { toPage('contact', 'about') }}>READ MORE<span></span></span>
                             </div>
                         </Col>
                     </Row>

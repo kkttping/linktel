@@ -38,27 +38,7 @@ width: 100%;
         cursor: pointer;
         z-index: 9;
 
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: -10px;
-          left: 0;
-          width: 96px;
-          height: 2px;
-          background-color: #fff;
-        }
-
-        &::before {
-          content: "";
-          position: absolute;
-          left: 80px;
-          bottom: 5px;
-          width: 7px;
-          height: 7px;
-          border-right: 2px solid #fff;
-          border-bottom: 2px solid #fff;
-          transform: rotate(-45deg);
-        }
+        
       }
     }
   }
@@ -190,27 +170,7 @@ width: 100%;
           cursor: pointer;
           z-index: 3;
 
-          &::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 96px;
-            height: 1px;
-            background-color: #000000;
-          }
-
-          &::before {
-            content: "";
-            position: absolute;
-            left: 90px;
-            bottom: 5px;
-            width: 7px;
-            height: 7px;
-            border-right: 2px solid #000000;
-            border-bottom: 2px solid #000000;
-            transform: rotate(-45deg);
-          }
+          
         }
       }
 
@@ -346,27 +306,7 @@ width: 100%;
         cursor: pointer;
         z-index: 9;
 
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: -10px;
-          left: 0;
-          width: 96px;
-          height: 2px;
-          background-color: #fff;
-        }
-
-        &::before {
-          content: "";
-          position: absolute;
-          left: 80px;
-          bottom: 5px;
-          width: 7px;
-          height: 7px;
-          border-right: 2px solid #fff;
-          border-bottom: 2px solid #fff;
-          transform: rotate(-45deg);
-        }
+        
       }
 
       &:hover {
