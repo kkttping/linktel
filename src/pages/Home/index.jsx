@@ -187,7 +187,23 @@ export default function Home() {
 
                 <div ><div style={(currentIndex === 1) ? { height: 'auto', opacity: '1' } : ((currentIndex === 2 || currentIndex === 3 || currentIndex === 4) ? { height: '70px', opacity: '1' } : {})} className='nav_bottom_page'>< NavBottom type={currentIndex} /></div></div>
                 <div className='mask' style={{ display: showmask ? 'flex' : 'none' }}>
-                    
+                    <div className='menutop'>
+                        <div className="tag" onClick={()=>{toPage('home')}}>
+                </div>
+                <div className="menu">
+                    <Menu current={[current]} onClick={menuonClick} mode="horizontal"  >
+                        {items.map((item, index) => {
+                            return <Menu.Item key={item.key}>
+                                <div onMouseOver={() => { setCurrentIndex(index) }}><span >{item.label}</span></div>
+                            </Menu.Item>
+                        })}
+                    </Menu>
+                </div>
+                <div className='seach_icon_box'><div className="seach_icon" onClick={() => toPage('search')}>
+                </div></div>
+                <div className="seach_icon2" style={{ backgroundImage: `url(${!showmask ? more : x})` }} onClick={() => { setshowmask(!showmask) }}>
+                </div>
+                    </div>
                     {/* {showList.map((item, index) => {
                         return <div key={index} onClick={() => next(item.next)}>{item.name}</div>
                     })} */}

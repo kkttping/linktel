@@ -10,12 +10,13 @@ body {
   word-wrap: break-word;
   font-size: 16px;
   line-height: 1.6;
+  color: #555;
 }
 @media screen and (max-width: 1280px) {
-  body{
-   font-size: 12px; 
+  body {
+    font-size: 12px;
   }
-   }
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -57,7 +58,7 @@ html {
   html {
     font-size: 0.875em;
   }
-   :where(.css-dev-only-do-not-override-ed5zg0).ant-row{
+  :where(.css-dev-only-do-not-override-ed5zg0).ant-row {
     flex-wrap: wrap;
   }
 }
@@ -65,38 +66,66 @@ html {
   html {
     font-size: 0.75em;
   }
- 
+  .card_two .ant-col-sm-24{
+  max-width: 100%;
+  height:320px;
+  }
 }
-.readmore{
-              display: flex;
-              padding: 6px 0;
-              font-size: 14px;
-              font-weight: 600;
-              border-bottom: 1px solid #000000;
-              align-items: center;
-              width: 100px;
-              transition:all 0.5s;
-              white-space: nowrap;
-              z-index: 300;
+.readmore {
+  display: flex;
+  padding: 6px 0;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #000000;
+  align-items: center;
+  width: 100px;
+  transition: all 0.5s;
+  white-space: nowrap;
+  z-index: 300;
 }
-                .readmore span {
-                        width: 5px;
-                        height: 5px;
-                        margin-left: 4px;
-                        border-right: 2px solid #000000;
-                        border-bottom: 2px solid #000000;
-                        transform: rotate(-45deg);
-                        transition:all 0.5s;
-                }
-                .readmore:hover{
-                    width: 110px;
-                    border-color:  rgb(42, 130, 228);
-                    color: rgb(42, 130, 228);
-                    
-                }
-                .readmore:hover span {
-                       margin-left: 14px;  
-                     border-right: 2px solid rgb(42, 130, 228);
-                        border-bottom: 2px solid rgb(42, 130, 228);   
-                    }
-                
+.readmore span {
+  width: 5px;
+  height: 5px;
+  margin-left: 4px;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  transform: rotate(-45deg);
+  transition: all 0.5s;
+}
+.readmore:hover {
+  width: 110px;
+  border-color: rgb(42, 130, 228);
+  color: rgb(42, 130, 228);
+}
+.readmore:hover span {
+  margin-left: 14px;
+  border-right: 2px solid rgb(42, 130, 228);
+  border-bottom: 2px solid rgb(42, 130, 228);
+}
+.about_home .name{
+  color:#fff !important;
+}
+@media (max-width:1200px){
+  .card_two .ant-col-sm-24{
+  max-width: 50% !important;
+  height:35vw !important;
+}
+  .about_home .img img{
+  height:35vw !important;  
+}
+}
+@media (max-width:640px){
+  .card_two .ant-col-sm-24{
+  max-width: 100% !important;
+  height:70vw !important;
+}
+  .com_card_products .img,.about_home .img img{
+  height:70vw !important;  
+}
+  .earth .card_two .ant-col-sm-24{
+  width: 100% !important;
+  height:500px !important;
+}
+}
+
+
