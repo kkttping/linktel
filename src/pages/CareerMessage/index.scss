@@ -5,8 +5,11 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
-
+        padding: 0 10vw;
+        box-sizing: border-box;
+        img{
+            max-width:80vw ;
+        }
         .title {
             margin-top: 66px;
             margin-bottom: 33px;
@@ -57,7 +60,7 @@
 
         .img2 {
             padding: 20px;
-            width:85%;
+            width: 85%;
             max-width: 720px;
             flex-direction: column;
             display: flex;

@@ -1,4 +1,3 @@
-import React from 'react'
 import TopInfo from '@/components/TopInfo'
 import imgBg from '@/static/img/ac_bg1.jpg'
 import NavLink from '@/components/NavLink'
@@ -6,19 +5,32 @@ import AboutNav from '@/components/AboutNav'
 import imgBg2 from '@/static/img/ac_bg2.jpg'
 import imgItem from '@/static/img/ac_item1.jpg'
 import { useNavigate } from "react-router-dom";
-    
+import React, { useEffect, useState } from 'react'
+import Http from "@/utils/http";
+import ConstValue from "@/utils/value";
+
 import './index.scss'
 export default function AboutCompany() {
     const navigate = useNavigate()
     const toPage = (address, routerName) => {
         navigate('/' +address);
     }
+    const [info, setInfo] = useState({});
+    useEffect(()=>{
+        getInfo()
+    },[])
+    const getInfo = async () => {
+        let res = await Http.to.items("About_us_page" ).readByQuery({
+            sort: ['id'],
+        });
+        setInfo(res.data)
+    }
     return (
         <div className='about_company'>
             <TopInfo imgBg={imgBg} title={'Company'} info1={'A Solution and Service Provider'} info2={'of High Speed Optical I/O Connectivity'} />
             <NavLink title1={'About'} link1={()=>{toPage('about')}} title2={'Company'}/>
             <AboutNav />
-            <div className='content'>
+            {/* <div className='content'>
                 <div className='text1'>
                     Linktel Technologies was founded in 2011, and through 11 years of rapid development, the company has become one of the mainstream optical component and transceiver suppliers in the world.
                 </div>
@@ -37,7 +49,8 @@ export default function AboutCompany() {
                     <br /><br />
                     We will be making unremitting efforts to forge Linktel Technologies a leading supplier of next generation of optical I/O connectivity solution, and a pioneer to unknown world.
                 </div>
-            </div>
+            </div> */}
+            <div className='content' dangerouslySetInnerHTML={{__html:info?.About_us_content}}></div>
 
         </div>
     )

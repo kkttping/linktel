@@ -3,8 +3,10 @@
 
   .content {
     display: flex;
-    align-items: center;
+    // align-items: center;
     flex-direction: column;
+    padding: 0 10vw;
+    box-sizing: border-box;
     .img {
       height: 380px;
       display: flex;

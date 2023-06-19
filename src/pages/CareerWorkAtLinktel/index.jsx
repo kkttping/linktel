@@ -1,4 +1,3 @@
-import React from 'react'
 import TopInfo from '@/components/TopInfo'
 import imgBg from '@/static/img/c2_bg1.jpg'
 import imgitem from '@/static/img/c3_item1.jpg'
@@ -8,19 +7,33 @@ import NavLink from '@/components/NavLink'
 import CareerNav from '@/components/CareerNav'
 import { Menu, Row, Col } from 'antd'
 import { useNavigate } from "react-router-dom";
-
+import React, { useEffect, useState } from 'react'
+import Http from "@/utils/http";
+import ConstValue from "@/utils/value";
 import './index.scss'
 export default function CareerWorkAtLinktel() {
+    const [info, setInfo] = useState({});
+
     const navigate = useNavigate()
     const toPage = (address, routerName) => {
         navigate('/' +address);
+    }
+    useEffect(()=>{
+        getInfo()
+    },[])
+    const getInfo = async () => {
+        let res = await Http.to.items("Work_At_Linktel" ).readByQuery({
+            sort: ['id'],
+        });
+        setInfo(res.data)
     }
     return (
         <div className='career_work_at_linktel'>
             <TopInfo imgBg={imgBg} title={"Work At Linktel"} info1={'A Solution and Service Provider'} info2={'of High Speed Optical I/O Connectivity'} />
             <NavLink title1={'Career'} link1={()=>{toPage('career')}} title2={"Work At Linktel"} />
             <CareerNav />
-            <div className='content'>
+            <div className='content' dangerouslySetInnerHTML={{__html:info?.content}}></div>
+            {/* <div className='content'>
                 <div className="title">
                     Linktel Technologies is full of youth and energy. The environment, systems and codes of conduct here embody the concept of "People First".
                 </div>
@@ -68,7 +81,7 @@ export default function CareerWorkAtLinktel() {
                     Festive presents and bonuses<br/>
 
                 </div>
-            </div>
+            </div> */}
 
         </div>
     )
