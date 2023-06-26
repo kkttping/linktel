@@ -72,7 +72,7 @@ export default function HomePage() {
 
         let arr2 = []
         lastArr.forEach((item) => {
-            if (item.status === 'Publick') {
+            if (item.status === 'published') {
                 arr2.unshift(item)
             } else {
                 arr2.push(item)
@@ -185,7 +185,7 @@ export default function HomePage() {
                                 className="code-box-shape"
                             >
                                 <div className='title_h1'>
-                                    Events
+                                    Exhibition
                                 </div>
                                 <Row justify={"center"}>
                                     <Col sm={24} xl={10} >

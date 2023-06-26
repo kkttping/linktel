@@ -8,8 +8,8 @@ export default function CardNews2(props) {
     return (
         <div className='card_news'>
             <Row className='newstable' justify={'center'}  onClick={link}>
-              <div>  {time && 
-                (<Col className='newsleft'>
+              <div className='newsleft'>  {time && 
+                (<Col >
                     <div className='time'>
                         <span>{time?.[0]} <br/></span>
                         <span>{time?.[1]}</span>
@@ -25,7 +25,10 @@ export default function CardNews2(props) {
                                 return (<span key={item}>{item} <br /></span>)
                             })}
                         </div>
-                        <span className='readmore'  onClick={link}>READ MORE<span></span></span>
+                        <span className='readmore' onClick={() => {
+                        link(); // 执行原有onclick事件
+                        document.querySelector('#top').scrollIntoView(); // 滚动到#top
+                        }}>READ MORE<span></span></span>
 
                     </div>
                  </Col>

@@ -1,2 +1,7 @@
-
+.newsleft{
+    display: flex;
+    @media (max-width:1200px){
+        display: block;
+    }
+}
 

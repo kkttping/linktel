@@ -32,32 +32,38 @@
 
         .svg_address {
             margin-right: 18px;
-            width: 17px;
+            margin-top: 4px;
+            width: 20px;
             height: 20px;
             background-image: url('../../static/svg/person2.svg');
             background-repeat: no-repeat;
             background-size: contain;
+            background-position: center;
         }
 
         .svg_phone {
             margin-right: 18px;
+            margin-top: 4px;
 
-            width: 20.25px;
+            width: 20px;
             height: 18px;
             background-image: url('../../static/svg/phone.svg');
             background-repeat: no-repeat;
             background-size: contain;
+            background-position: center;
 
         }
 
         .svg_email {
             margin-right: 18px;
+            margin-top: 4px;
 
-            width: 20.36px;
+            width: 20px;
             height: 16px;
             background-image: url('../../static/svg/email.svg');
             background-repeat: no-repeat;
             background-size: contain;
+            background-position: center;
 
         }
     }

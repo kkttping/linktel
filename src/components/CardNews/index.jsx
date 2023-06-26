@@ -12,12 +12,18 @@ export default function CardNews(props) {
                     <div className='infomation'onClick={link} >
                         <div className='title' >{title}</div>
                         <div className='info'>
-                            {infoList?.map(item=>{
-                                return (<span key={item}>{item} <br/></span>)
-                            })}
-                            </div>
-                        <span className='readmore' onClick={link}>READ MORE<span></span></span>
-
+  {infoList?.map(item => {
+    return (
+      <span key={item} 
+        dangerouslySetInnerHTML={{__html: item.replace(/\n/g, "<br/>") }} 
+      />
+    )
+  })}
+</div>
+                        <span className='readmore' onClick={() => {
+                        link(); // 执行原有onclick事件
+                        document.querySelector('#top').scrollIntoView(); // 滚动到#top
+                        }}>READ MORE<span></span></span>  
                     </div>
                 </Col>
                 <Col className='newsright'>

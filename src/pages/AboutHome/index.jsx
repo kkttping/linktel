@@ -125,7 +125,7 @@ export default function AboutHome() {
                                     </div>
                                 </Col>
                                 <Col xs={24} lg={12} xl={12} >
-                                    <div className='card_item card_newsnew' style={{width:'100vw'}}>
+                                    <div className='card_item card_newsnew' >
                                         {news && (
                                             <div className='news' >
                                                 <div className='news_title'>News</div>
@@ -159,8 +159,9 @@ export default function AboutHome() {
                                 </div>
                                 <div className='responsibility_info'>
                                     Linktel and MultiLane Showcase a 2xFR4 OSFP Transceiver Demo with Live 800G BERT Traffic at OFC 2022
-                                </div>
                                 <span className='readmore' onClick={() => { toPage('responsibility', 'about') }}>READ MORE<span> </span></span>
+                                </div>
+                                
 
                             </div>
                         </Col>
@@ -172,9 +173,10 @@ export default function AboutHome() {
                                 <div className='contact_info'>
                                     Headquarters<br />
                                     Linktel USA<br />
-                                    Linktel Malaysia
+                                    Linktel Malaysia<br />
+                                 <span className='readmore' onClick={() => { toPage('contact', 'about') }}>READ MORE<span></span></span>
                                 </div>
-                                <span className='readmore' onClick={() => { toPage('contact', 'about') }}>READ MORE<span></span></span>
+                                
                             </div>
                         </Col>
                     </Row>

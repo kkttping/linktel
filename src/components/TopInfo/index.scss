@@ -85,12 +85,12 @@
 
       .texty {
         > span {
-          font-size: 6rem;
+          font-size: 5rem;
           font-weight: 700;
           z-index: 2;
           margin-bottom: 10px;
           @media screen and (max-width: 640px) {
-           font-size: 2.5rem;
+           font-size: 4rem;
       }
 
         }
@@ -137,3 +137,19 @@
     opacity: 0;
   }
 }
+.products2{
+  .top_info {
+  .img_main {
+  .titel {
+  .texty {
+        > span {
+          font-size: 4rem;
+          white-space: pre-line;
+          line-height: 1.2;
+          @media screen and (max-width: 640px) {
+           font-size: 2.5rem;
+      }
+
+        }
+      }
+}}}}

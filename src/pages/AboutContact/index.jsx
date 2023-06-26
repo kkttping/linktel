@@ -142,9 +142,9 @@ export default function AboutContact() {
                     </div>
                     <div className='content_info'>
                         <div className="title">{mapList[selectMap]?.Company}</div>
-                        <div className="address"><div className='svg_address'></div>{mapList[selectMap]?.Address}</div>
-                        <div className="phone"><div className='svg_phone'></div>{mapList[selectMap]?.Phone}</div>
-                        <div className="email"><div className='svg_email'></div>{mapList[selectMap]?.Email}</div>
+                        <div className="address"><div className='svg_address'></div><div style={{width: '90%'}} >{mapList[selectMap]?.Address}</div></div>
+                        <div className="phone"><div className='svg_phone'></div><div style={{width: '90%'}} >{mapList[selectMap]?.Phone}</div></div>
+                        <div className="email"><div className='svg_email'></div><div style={{width: '90%'}} >{mapList[selectMap]?.Email}</div></div>
                     </div>
                 </div>
                 <div className='infomation'>

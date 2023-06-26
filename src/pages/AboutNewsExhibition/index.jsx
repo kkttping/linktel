@@ -38,30 +38,15 @@ export default function AboutNewsExhibition() {
             filter: { 'collection': 'Img', }
         });
         let img = '';
-        res.data.forEach((item0) => {
+        res.data.forEach(item0 => {
+  const imgList = res2.data.filter(item2 => item2.id === item0.Content)
+  item0.imgList = imgList.map(item => item.item.Img) 
+})
 
-            item0.Content.forEach((item) => {
-                res2?.data?.forEach((item2) => {
-                    if (item === item2.id
-                    ) {
-                        img = item2?.item?.Img
-                        item0.img = img;
-                    }
-                })
-            })
-        })
-        let arr=[]
-        res.data.forEach((item) => {
-            if(item.status === 'Publick'){
-                arr.unshift(item)
-            }else{
-                arr.push(item)
-            }
-            
-        })
-        
+let arr = res.data.filter(item => item.status === 'published') 
+arr = arr.concat(res.data.filter(item => item.status !== 'published'))
 
-        setInfo(arr);
+setInfo(arr);
 
     }
 
@@ -72,7 +57,14 @@ export default function AboutNewsExhibition() {
             <NewsNav />
             {info.map((item, index) => {
                 return (
-                    <CardNews key={index} link={() => toPage('newsInfo', item.id + '/' + item.type)} title={item.Title} infoList={item.Exhibition.split('/n')} img={ConstValue.url + "assets/" + item?.img} />
+                    <CardNews 
+                    key={index} 
+                    link={() => toPage('newsInfo', 
+                    item.id + '/' + item.type)} 
+                    title={item.Title} 
+                    infoList={item.Exhibition.split('/n')} 
+                    img={ConstValue.url + "assets/" + item?.Img} 
+                    />
 
                 )
             })}

@@ -38,7 +38,6 @@ p {
   word-break: keep-all;
   word-wrap: break-word;
   white-space: pre-wrap;
-  text-align: justify;
   text-justify: inter-ideograph;
 }
 html {
@@ -127,5 +126,7 @@ html {
   height:500px !important;
 }
 }
-
+.act{
+  color:#003DA6;
+}
 

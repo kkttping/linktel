@@ -37,20 +37,15 @@ export default function AboutNewsEvents() {
             filter: { 'collection': 'Img', }
         });
         let img = '';
-        res.data.forEach((item0) => {
-            item0.Content.forEach((item) => {
-                res2?.data?.forEach((item2) => {
-                    if (item === item2.id
-                    ) {
-                        img = item2?.item?.Img
-                        item0.img = img;
-                    }
-                })
-            })
-        })
+res.data.forEach(item0 => {
+  const imgList = res2.data.filter(item2 => item2.id === item0.Content)
+  item0.imgList = imgList.map(item => item.item.Img) 
+})
 
+let arr = res.data.filter(item => item.status === 'published') 
+arr = arr.concat(res.data.filter(item => item.status !== 'published'))
 
-        setInfo(res.data);
+setInfo(arr);
 
     }
     const timeSet = (num) => {
@@ -72,7 +67,7 @@ export default function AboutNewsEvents() {
                         time={[`${timeSet((new Date(item?.date_created)).getMonth())}-${timeSet((new Date(item?.date_created)).getDay())}`, (new Date(item?.date_created)).getFullYear()]}
                         title={item?.Title}
                         infoList={[item?.Title]}
-                        img={ConstValue.url + "assets/" + item?.img}
+                        img={ConstValue.url + "assets/" + item?.Img}
 
                     />
                 )
