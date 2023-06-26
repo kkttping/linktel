@@ -75,7 +75,7 @@ html {
   padding: 6px 0;
   font-size: 14px;
   font-weight: 600;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid ;
   align-items: center;
   width: 100px;
   transition: all 0.5s;
@@ -86,20 +86,17 @@ html {
   width: 5px;
   height: 5px;
   margin-left: 4px;
-  border-right: 2px solid #000000;
-  border-bottom: 2px solid #000000;
+  border-right: 2px solid ;
+  border-bottom: 2px solid ;
   transform: rotate(-45deg);
   transition: all 0.5s;
 }
 .readmore:hover {
-  width: 110px;
-  border-color: rgb(42, 130, 228);
+  width: 110px;;
   color: rgb(42, 130, 228);
 }
 .readmore:hover span {
   margin-left: 14px;
-  border-right: 2px solid rgb(42, 130, 228);
-  border-bottom: 2px solid rgb(42, 130, 228);
 }
 .about_home .name{
   color:#fff !important;
@@ -116,10 +113,10 @@ html {
 @media (max-width:640px){
   .card_two .ant-col-sm-24{
   max-width: 100% !important;
-  height:70vw !important;
+  height:30rem !important;
 }
   .com_card_products .img,.about_home .img img{
-  height:70vw !important;  
+  height:30rem !important;  
 }
   .earth .card_two .ant-col-sm-24{
   width: 100% !important;
@@ -129,4 +126,20 @@ html {
 .act{
   color:#003DA6;
 }
-
+@media (min-width: 576px) {
+  :where(.css-dev-only-do-not-override-ed5zg0).ant-col-sm-24 {
+display: block; 
+flex: 1; 
+max-width: 100%;
+}
+}
+@media (min-width: 1200px) {
+  :where(.css-ed5zg0).ant-col-xl-24 {
+display: block; 
+flex: 1; 
+max-width: 100%;
+}
+}
+:where(.css-ed5zg0).ant-row-center{
+  gap: 0;
+}

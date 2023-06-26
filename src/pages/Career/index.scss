@@ -1,5 +1,8 @@
 .career {
     .content {
+        .careertable{
+    gap: 0;
+}
         .creertable{
             gap: 32px;
         }
@@ -25,8 +28,14 @@
         }
 
         .card_item {
-            height: 560px;
+            height: 25rem;
             background-color: #000;
+             @media screen and (max-width: 1000px) {
+         height: 100%;
+      }
+            .name{
+                color: #fff;
+            }
         }
 
         .opportunities_item {

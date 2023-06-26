@@ -33,7 +33,7 @@ export default function Career() {
         <div className='career'>
             <TopInfo imgBg={imgBg} title={'Markets'} info1={'A Solution and Service Provider'} info2={'of High Speed Optical I/O Connectivity'} />
             <div className='content'>
-                <Row justify={"center"}>
+                <Row justify={"center"} className='careertable'>
                     <Col sm={24} xl={12} >
                         <div className='card_item'>
                             <CardProducts link={() => { toPage('message', 'career') }} img={imgitem1} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={"General Manager's Message"} titleIn={"General Manager's Message"} info={['12312313虚拟文字']} ></CardProducts>

@@ -20,7 +20,7 @@
         background: rgb(0, 61, 166);
         color: rgb(255, 255, 255);
         font-family: Barlow;
-        font-size: 100px;
+        font-size: 5rem;
         font-weight: 700;
         line-height: 72px;
         letter-spacing: 0px;
@@ -166,21 +166,21 @@
         }
 
         .ant-col {
-            .readmore {
-                font-size: 14px;
-                position: absolute;
-                cursor: pointer;
+            .readmorediv {
                 bottom: 5px;
-                right: 5px;
-                padding-bottom: 8px;
-                display: inline-block;
-                width: 150px;
+                cursor: pointer;
+                position: relative;
+                margin-left: 24px;
+                width:130px;
+                @media (max-width:640px){
+                    margin-left: 0;
+                }
                 
             }
         }
 
     }
 }
-:where(.css-ed5zg0).ant-row-center{
+.search :where(.css-ed5zg0).ant-row-center{
     gap: 24px;
 }

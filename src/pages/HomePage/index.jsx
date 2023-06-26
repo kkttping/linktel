@@ -103,15 +103,15 @@ export default function HomePage() {
             fields: [' *,item.*'],
             filter: { 'collection': 'Img', }
         });
-        let img = '';
-        res.data?.[0]?.Content.forEach((item) => {
-            res2?.data?.forEach((item2) => {
-                if (item === item2.id
-                ) {
-                    img = item2?.item?.Img
-                }
-            })
-        })
+        let newImg = res.data[0].Img;  // 先提取New集合img
+  let img;
+  if (!newImg) { // 如果newImg不存在
+    res.data[0].Content.forEach(item => {
+      img = res2.data.find(item2 => item2.id === item)?.item?.Img 
+    })
+  } else {
+    img = newImg;  // 否则,img赋值为newImg
+  }
         setnewImg(img);
         setNewInfo(res.data?.[0]);
     }

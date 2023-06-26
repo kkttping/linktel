@@ -65,9 +65,7 @@ export default function CardOpportunities(props) {
     }
     return (
         <div className='card_opportunities'>
-            {contextHolder}
-
-            <span className='readmore' onClick={() => { setIsModalOpen(true) }}>READ MORE <span></span></span>
+            {contextHolder}      
             <div>
                 <div className="title_tag">Position</div>
                 <div className="title">{data?.position}</div>
@@ -87,6 +85,7 @@ export default function CardOpportunities(props) {
                     <div className='info'>{data?.Hiring}</div>
                 </div>
             </div>
+            <span className='readmore' onClick={() => { setIsModalOpen(true) }}>READ MORE <span></span></span>
             <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={[]} width={720}>
                 <div className='content'>
                     <div>
@@ -121,8 +120,8 @@ export default function CardOpportunities(props) {
                 </div>
 
                 <div>
-                    <Row>
-                        <Col sm={24} xl={12}>
+                    <Row className="careeropentable">
+                        <Col sm={24} xl={12} >
                             <div className='upload_box'>
 
 

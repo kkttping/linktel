@@ -87,20 +87,17 @@
         }
         &:hover {
              background: linear-gradient(192.53deg, rgba(0, 61, 166, 0) 25.563%, rgb(0, 61, 166) 99.432%);
+             color: #fff;
              >span{
                  position: relative;
                  bottom: 0;
                  opacity: 1;
                  height: auto;
                  margin-bottom: 16px;
+                 color: #fff;
              }
              .readmore {
-                     display: flex;
-                     border-bottom: 1px solid #fff;
-                     span{
-                        border-right: 2px solid #fff;
-                        border-bottom: 2px solid #fff;
-                     }
+                     display: flex;     
                  }
             .name{
                 color: #fff;

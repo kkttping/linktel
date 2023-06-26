@@ -98,7 +98,7 @@ export default function Search() {
                   <Col className='info_right' >
                     <div className='info_box'><div className='info_title' dangerouslySetInnerHTML={{ __html: item?.name?.replace(RegExp(searchV, "g"), `<i class="color_c">${searchV}</i>`) }}></div>
                       <div className='info_text' dangerouslySetInnerHTML={{ __html: item?.description?.replace(RegExp(searchV, "g"), `<b class="color_c">${searchV}</b>`) }}></div></div>
-                    <span className='readmore' onClick={() => { toPage('products3', item?.id, item?.Advanced_category) }}>READ MORE<span></span></span>
+                    <div className='readmorediv'><span className='readmore' onClick={() => { toPage('products3', item?.id, item?.Advanced_category) }}>READ MORE<span></span></span></div>
 
                   </Col>
                 </Row>
