@@ -152,20 +152,19 @@ export default function AboutContact() {
                         Sales & Marketing
                     </div>
                     {linkList.map((item, index) => {
-                        return (
-                            <div key={index} className='person_info'>
-                                <CardPersonInfo
-                                    title={item?.Project}
-                                    name={item?.contacts}
-                                    phone
-                                    ={item?.Phone
-                                    }
-                                    email={item?.Email}
-
-                                />
-                            </div>
-                        )
-                    })}
+  if (item?.status === 'published') {
+    return (
+      <div key={index} className='person_info'> 
+        <CardPersonInfo
+          title={item?.Project}
+          name={item?.contacts}
+          phone={item?.Phone}
+          email={item?.Email} 
+        />  
+      </div>
+    )
+  }
+})}
 
                     <div className="content_title">
                         Leave Your Message
