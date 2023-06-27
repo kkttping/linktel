@@ -94,12 +94,17 @@ export default function Products3() {
 
         },
         {
-            title: 'download',
-            key: 'operation',
-            fixed: 'right',
-            width: 59,
-            render: (e) =>  <div className='download'><a onClick={() => { download(ConstValue.url + "assets/" + e?.download) }} ><CloudDownloadOutlined /></a> </div>
-             },
+           title: 'download',
+           key: 'operation',
+           fixed: 'right',
+           width: 59,
+           render: (e) =>  
+           e?.download && <div className='download'>
+           <a onClick={() => { download(ConstValue.url + "assets/" + e?.download) }}>
+           <CloudDownloadOutlined />
+           </a> 
+           </div> 
+    },
     ];
     function download(url = '', fileName = 'data') {
         const a = document.createElement('a');

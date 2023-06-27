@@ -140,9 +140,11 @@
 
           .person_svg {
             margin-top: 15px;
-            width: 16px;
-            height: 13px;
+            width: 20px;
+            height: 10px;
             background-image: url("../../static/svg/person.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
           }
         }
 
@@ -204,7 +206,10 @@
           height: 12.5vw;
           transition: all 0.5s ease-out;
           &:hover{
-            background-color: #bbc7db;
+            background-color: #bbc7db;         
+               &::after{
+                left: 60%;
+              }           
           }
 
           @media (max-width: 1200px) {
@@ -226,6 +231,7 @@
             transform: translate(-50%);
             background-repeat: no-repeat;
             z-index: 3;
+            transition: all 0.5s ease-out;
             background-image: url("../../static/svg/right_dir.svg");
           }
         }
@@ -240,7 +246,12 @@
             height: 25vw;
           }
 
-          &::before {
+         
+        }
+
+        .activty {
+          position: relative;
+           &::before {
             content: "";
             position: absolute;
             top: 50%;
@@ -253,10 +264,6 @@
             background-image: url("../../static/svg/selected.svg");
             z-index: 5;
           }
-        }
-
-        .activty {
-          position: relative;
 
           &::after {
             content: "";
@@ -347,6 +354,7 @@
       height: 100%;
       background-image: url("../../static/img/ah_bg2.jpg");
       background-size: cover;
+      background-attachment:fixed;
     }
   }
 }
