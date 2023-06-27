@@ -29,7 +29,7 @@ export default function CareerWorkAtLinktel() {
     }
     return (
         <div className='career_work_at_linktel'>
-            <TopInfo imgBg={imgBg} title={"Work At Linktel"} info1={'A Solution and Service Provider'} info2={'of High Speed Optical I/O Connectivity'} />
+            <TopInfo imgBg={imgBg} title={"Work At Linktel"} info1={"LET'S GROW UP TOGETHER WITH YOU"} info2={'TO CREATE INFINITE POSSIBILITY'} />
             <NavLink title1={'Career'} link1={()=>{toPage('career')}} title2={"Work At Linktel"} />
             <CareerNav />
             <div className='content' dangerouslySetInnerHTML={{__html:info?.content}}></div>

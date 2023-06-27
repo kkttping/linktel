@@ -128,7 +128,7 @@ export default function AboutContact() {
         <div className='about_contact'>
             {/* <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVTk78W-PvhqUC08l6MBqUHTjJXSGcP4g&libraries=places&language=en-US"></script> */}
             {contextHolder}
-            <TopInfo imgBg={imgBg} title={'Contact'} styleSelf={{ bgColor: '#000' }} info1={'A Solution and Service Provider'} info2={'of High Speed Optical I/O Connectivity'} />
+            <TopInfo imgBg={imgBg} title={'Contact'} styleSelf={{ bgColor: '#000' }} info1={'LINK TO THE UNKNOWN'} info2={' '} />
             <NavLink title1={'About'} link1={() => { toPage('about') }} title2={'Contact'} />
             <AboutNav />
             <div className='content'>

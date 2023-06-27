@@ -31,17 +31,17 @@ export default function Career() {
     }
     return (
         <div className='career'>
-            <TopInfo imgBg={imgBg} title={'Markets'} info1={'A Solution and Service Provider'} info2={'of High Speed Optical I/O Connectivity'} />
+            <TopInfo imgBg={imgBg} title={'Markets'} info1={'LINK TO THE UNKNOWN'} info2={' '} />
             <div className='content'>
                 <Row justify={"center"} className='careertable'>
                     <Col sm={24} xl={12} >
                         <div className='card_item'>
-                            <CardProducts link={() => { toPage('message', 'career') }} img={imgitem1} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={"General Manager's Message"} titleIn={"General Manager's Message"} info={['12312313虚拟文字']} ></CardProducts>
+                            <CardProducts link={() => { toPage('message', 'career') }} img={imgitem1} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={"General Manager's Message"} titleIn={"General Manager's Message"} info={['Focusing on technologies and products, Linktel Technologies has become one of the fastest developing companies in the field of ...']} ></CardProducts>
                         </div>
                     </Col>
                     <Col sm={24} xl={12} >
                         <div className='card_item'>
-                            <CardProducts link={() => { toPage('workAtLinktel', 'career') }} img={imgitem2} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Cultrue in Linktel'} titleIn={'Cultrue in Linktel'} info={['12312313虚拟文字']}></CardProducts>
+                            <CardProducts link={() => { toPage('workAtLinktel', 'career') }} img={imgitem2} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Cultrue in Linktel'} titleIn={'Cultrue in Linktel'} info={['Linktel Technologies is full of youth and energy. The environment, systems and codes of conduct here embody the concept of "People First" ... ']}></CardProducts>
                         </div>
                     </Col>
                 </Row>

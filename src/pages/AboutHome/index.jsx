@@ -63,17 +63,17 @@ export default function AboutHome() {
     }
     return (
         <div className='about_home'>
-            <TopInfo imgBg={imgBg} title={'About'} info1={'A Solution and Service Provider'} info2={'of High Speed Optical I/O Connectivity'} />
+            <TopInfo imgBg={imgBg} title={'About'} info1={'LINK TO THE UNKNOWN'} info2={' '} />
             <div className='content'>
                 <Row justify={"center"} className='card_two'>
                     <Col sm={24} xl={12} >
                         <div className='card_item'>
-                            <CardProducts link={() => { toPage('company', 'about') }} img={imgitem1} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Company '} titleIn={'Company '} info={['12312313虚拟文字']} ></CardProducts>
+                            <CardProducts link={() => { toPage('company', 'about') }} img={imgitem1} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Company '} titleIn={'Company '} info={['Linktel Technologies was founded in 2011, and through 11 years of rapid development, the company has become one of the mainstream optical component and transceiver suppliers in the world.']} ></CardProducts>
                         </div>
                     </Col>
                     <Col sm={24} xl={12} >
                         <div className='card_item'>
-                            <CardProducts link={() => { toPage('culture', 'about') }} img={imgitem2} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Culture '} titleIn={'Culture '} info={['12312313虚拟文字']}></CardProducts>
+                            <CardProducts link={() => { toPage('culture', 'about') }} img={imgitem2} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Culture '} titleIn={'Culture '} info={['Become a world leading provider of integrated optical I/O Connectivity Solution and Service']}></CardProducts>
                         </div>
                     </Col>
                 </Row>
@@ -134,7 +134,7 @@ export default function AboutHome() {
   styleSelf={{ color: '#fff', objectfit: 'cover' }} 
   titleout={'Investors'} 
   titleIn={'Investors'} 
-  info={['12312313虚拟文字']} >
+  info={[' Linktel went IPO at Shenzhen Stock Exchange Market on Sep 13, 2022, and will open a new chapter to go for the future growth. ']} >
       </CardProducts>
                                     </div>
                                 </Col>
@@ -162,7 +162,7 @@ export default function AboutHome() {
 
                         <Col sm={24} xl={12} >
                             <div className='card_item'>
-                                <CardProducts link={() => { toPage('quality', 'about'); window.scrollTo(0, 0); }} img={imgitem7} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Quality'} titleIn={'Quality'} info={['12312313虚拟文字']}></CardProducts>
+                                <CardProducts link={() => { toPage('quality', 'about'); window.scrollTo(0, 0); }} img={imgitem7} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Quality'} titleIn={'Quality'} info={['Linktel, ISO9001 and ISO14001 certified, has well-established quality control system and MES production execution system in place to ensure product quality stable, consistent and reliable. ']}></CardProducts>
                             </div>
                         </Col>
                     </Row>
@@ -176,7 +176,7 @@ export default function AboutHome() {
                                     Responsibility
                                 </div>
                                 <div className='responsibility_info'>
-                                    Linktel and MultiLane Showcase a 2xFR4 OSFP Transceiver Demo with Live 800G BERT Traffic at OFC 2022
+                                    We focus on the sustainable development of society and ecology, striving to become a global enterprise with social responsibility
                                 <span className='readmore' onClick={() => { toPage('responsibility', 'about') ; window.scrollTo(0, 0);}}>READ MORE<span> </span></span>
                                 </div>
                                 
@@ -189,9 +189,10 @@ export default function AboutHome() {
                                     Contact
                                 </div>
                                 <div className='contact_info'>
-                                    Headquarters<br />
-                                    Linktel USA<br />
+                                     Linktel USA<br />
                                     Linktel Malaysia<br />
+                                    Linktel China<br />
+                                   
                                  <span className='readmore' onClick={() => { toPage('contact', 'about'); window.scrollTo(0, 0); }}>READ MORE<span></span></span>
                                 </div>
                                 

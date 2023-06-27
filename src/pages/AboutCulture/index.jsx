@@ -29,7 +29,7 @@ export default function AboutCulture() {
     }
     return (
         <div className='about_culture'>
-            <TopInfo imgBg={imgBg} title={'Culture '} styleSelf={{ bgColor: '#000' }} info1={'A Solution and Service Provider'} info2={'of High Speed Optical I/O Connectivity'} />
+            <TopInfo imgBg={imgBg} title={'Culture '} styleSelf={{ bgColor: '#000' }} info1={'LINK TO THE UNKNOWN'} info2={' '} />
             <NavLink title1={'About'} link1={()=>{toPage('about')}} title2={'Culture'}/>
             <AboutNav />
             <Row justify={'center'}>

@@ -104,7 +104,7 @@ export default function AboutLeadership() {
     }
     return (
         <div className='about_leadership'>
-            <TopInfo imgBg={imgBg} title={'Leadership'} styleSelf={{ bgColor: '#000' }} info1={'A Solution and Service Provider'} info2={'of High Speed Optical I/O Connectivity'} />
+            <TopInfo imgBg={imgBg} title={'Leadership'} styleSelf={{ bgColor: '#000' }} info1={'LINK TO THE UNKNOWN'} info2={' '} />
             <NavLink title1={'About'} link1={() => { toPage('about') }} title2={'Leadership'} />
             <AboutNav />
             <div className='content'>

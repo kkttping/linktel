@@ -28,7 +28,7 @@ export default function CareerMessage() {
     }
     return (
         <div className='career_message'>
-            <TopInfo imgBg={imgBg} title={"GM's Message"} info1={'A Solution and Service Provider'} info2={'of High Speed Optical I/O Connectivity'} />
+            <TopInfo imgBg={imgBg} title={"GM's Message"} info1={'LINK TO THE UNKNOWN'} info2={' '} />
             <NavLink title1={'Career'} link1={()=>{toPage('career')}} title2={"GM's Message"}/>
             <CareerNav />
             {/* <div className='content'> */}

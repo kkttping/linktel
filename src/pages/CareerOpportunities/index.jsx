@@ -28,7 +28,7 @@ export default function CareerOpportunities() {
     }
     return (
         <div className='career_opportunities'>
-            <TopInfo imgBg={imgBg} title={"Job opportunities"} info1={'A Solution and Service Provider'} info2={'of High Speed Optical I/O Connectivity'} />
+            <TopInfo imgBg={imgBg} title={"Job opportunities"} info1={'LINK TO THE UNKNOWN'} info2={' '} />
             <NavLink title1={'Career'} link1={()=>{toPage('career')}} title2={"Job opportunities"}/>
             <CareerNav />
             <div className='content'>

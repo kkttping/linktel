@@ -35,8 +35,8 @@ export default function Products() {
 			<TopInfo
 				imgBg={imgBg}
 				title={'Products'}
-				info1={'A Solution and Service'}
-				info2={'Provider of High Speed Optical I/O Connectivity'}
+				info1={'LINK TO THE UNKNOWN'}
+				info2={' '}
 			/>
 			<Row justify={"center"}>
 

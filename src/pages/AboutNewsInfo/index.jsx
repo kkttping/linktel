@@ -90,9 +90,7 @@ export default function AboutNewsInfo() {
                 </div>
 
             </div>
-            <div className='info'>
-                {info?.text1}
-            </div>
+           <div className='info' dangerouslySetInnerHTML={{ __html: info?.text1 }} />
             <div className='img'>
                 <img src={ConstValue.url + "assets/" + info?.img} alt="" />
             </div>
