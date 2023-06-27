@@ -7,7 +7,10 @@ export default function CardNews2(props) {
     const { title, infoList, img, time,link } = props
     return (
         <div className='card_news'>
-            <Row className='newstable' justify={'center'}  onClick={link}>
+            <Row className='newstable' justify={'center'}  onClick={() => {
+                        link(); // 执行原有onclick事件
+                        document.querySelector('#top').scrollIntoView(); // 滚动到#top
+                        }}>
               <div className='newsleft'>  {time && 
                 (<Col >
                     <div className='time'>

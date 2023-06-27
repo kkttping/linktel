@@ -47,11 +47,29 @@ export default function NavBottom(porps) {
                     return (
                         <div className='item' key={index} >
                             <div className='img' dangerouslySetInnerHTML={{ __html: item?.img }}></div>
-                            <div className='title' onClick={() => toPage(item?.link)}>{item?.menu
-                            }</div>
-                            {item?.nextmenu?.map(item2 => {
-                                return <p onClick={() => toPage(item2?.link,item2?.menuby)} key={item2.menuby}>{item2.menu}</p>
-                            })}
+                            <div className='title' onClick={() => {
+  if (!item?.link.includes('http')) {
+    toPage(item?.link);
+  } else {
+    window.open(item?.link);
+  } 
+}}>
+  {item?.menu}
+</div>  
+{item?.nextmenu?.map(item2 => {
+  return <p 
+    onClick={() => {
+      if (!item2?.link.includes('http')) {
+        toPage(item2?.link, item2?.menuby); 
+      } else {
+        window.open(item2?.link);  
+      }
+    }}
+    key={item2.menuby}
+  >
+    {item2.menu}
+  </p>
+})}
 
 
                         </div>
@@ -66,7 +84,19 @@ export default function NavBottom(porps) {
             {info?.nextmenu?.[2]?.nextmenu?.map((item, index) => {
 
                 return (
-                    <div key={index} onClick={() => toPage(item?.link)} >{item?.menu}</div>
+                    <div 
+  key={index} 
+  className='info_nav' 
+  onClick={() => {
+    if (!item.link.includes('http')) {
+      toPage(item.link);
+    } else {
+      window.open(item.link);
+    }
+  }} 
+>
+  {item.menu}
+</div>
                 )
             })}
         </div>
@@ -76,7 +106,19 @@ export default function NavBottom(porps) {
             {info?.nextmenu?.[1]?.nextmenu?.map((item, index) => {
 
                 return (
-                    <div key={index} onClick={() => toPage(item?.link)} >{item?.menu}</div>
+                    <div 
+  key={index} 
+  className='info_nav' 
+  onClick={() => {
+    if (!item.link.includes('http')) {
+      toPage(item.link);
+    } else {
+      window.open(item.link);
+    }
+  }} 
+>
+  {item.menu}
+</div>
                 )
             })}
         </div>
@@ -86,7 +128,19 @@ export default function NavBottom(porps) {
             {info?.nextmenu?.[3]?.nextmenu?.map((item, index) => {
 
                 return (
-                    <div key={index} onClick={() => toPage(item?.link)} >{item?.menu}</div>
+                   <div 
+  key={index} 
+  className='info_nav' 
+  onClick={() => {
+    if (!item.link.includes('http')) {
+      toPage(item.link);
+    } else {
+      window.open(item.link);
+    }
+  }} 
+>
+  {item.menu}
+</div>
                 )
             })}
         </div>

@@ -94,15 +94,22 @@ export default function AboutHome() {
                                     <div className='leadership_name'><div className='person_svg'></div>{leadershipList[imgSelect]?.Name}</div>
                                     <div className='leadership_work'>{leadershipList[imgSelect]?.Position}</div>
                                     <div className='leadership_info' dangerouslySetInnerHTML={{ __html: leadershipList[imgSelect]?.Introduce?.replace(/\n/g, "<br/>") }}></div>
-                                    <span className='readmore' onClick={() => { toPage('leadership', leadershipList[imgSelect]?.id) }}>READ MORE<span></span></span>
+                                    <span className='readmore' onClick={() => { toPage('leadership', leadershipList[imgSelect]?.id); window.scrollTo(0, 0); }}>READ MORE<span></span></span>
 
                                 </div>
                                 <div className="select_img">
                                     {leadershipList.map((item, index) => {
                                         return (
-                                            <div key={index} className={imgSelect === index ? 'select_img activty' : 'select_img'} onClick={() => setImgSelect(index)}><img src={ConstValue.url + "assets/" + item?.Thumbnail
-
-                                            } alt="" /></div>
+                                            <div 
+  key={index} 
+  className={imgSelect === index ? 'select_img activty' : 'select_img'}
+  onClick={() => {
+    setImgSelect(index);
+    window.scrollTo(0, 0); 
+  }} 
+>
+  <img src={ConstValue.url + "assets/" + item?.Thumbnail} alt="" />
+</div>
 
                                         )
                                     })}
@@ -120,8 +127,15 @@ export default function AboutHome() {
                         <Col sm={24} xl={12}  >
                             <Row>
                                 <Col xs={24} lg={12} xl={12} >
-                                    <div className='card_item' style={{width:'100vw'}}>
-                                        <CardProducts link={() => { }} img={imgitem6} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Investors'} titleIn={'Investors'} info={['12312313虚拟文字']} ></CardProducts>
+                                    <div className='card_item' style={{width:'25vw'}}>
+                                        <CardProducts 
+  link={() => window.open('https://quote.eastmoney.com/SZ301205.html')} 
+  img={imgitem6} 
+  styleSelf={{ color: '#fff', objectfit: 'cover' }} 
+  titleout={'Investors'} 
+  titleIn={'Investors'} 
+  info={['12312313虚拟文字']} >
+      </CardProducts>
                                     </div>
                                 </Col>
                                 <Col xs={24} lg={12} xl={12} >
@@ -133,7 +147,11 @@ export default function AboutHome() {
                                                 <div className='news_info'>{news
                                                     .Title
                                                 }</div>
-                                                <span className='readmore' onClick={() => toPage2('newsInfo', news.id + '/' + news.type)}>READ MORE<span></span></span>
+                                                <span className='readmore' onClick={() => {
+    toPage2('newsInfo', news.id + '/' + news.type); 
+    window.scrollTo(0, 0); 
+  }}
+>READ MORE<span></span></span>
                                             </div>
                                         )}
 
@@ -144,7 +162,7 @@ export default function AboutHome() {
 
                         <Col sm={24} xl={12} >
                             <div className='card_item'>
-                                <CardProducts link={() => { toPage('quality', 'about') }} img={imgitem7} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Quality'} titleIn={'Quality'} info={['12312313虚拟文字']}></CardProducts>
+                                <CardProducts link={() => { toPage('quality', 'about'); window.scrollTo(0, 0); }} img={imgitem7} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Quality'} titleIn={'Quality'} info={['12312313虚拟文字']}></CardProducts>
                             </div>
                         </Col>
                     </Row>
@@ -159,7 +177,7 @@ export default function AboutHome() {
                                 </div>
                                 <div className='responsibility_info'>
                                     Linktel and MultiLane Showcase a 2xFR4 OSFP Transceiver Demo with Live 800G BERT Traffic at OFC 2022
-                                <span className='readmore' onClick={() => { toPage('responsibility', 'about') }}>READ MORE<span> </span></span>
+                                <span className='readmore' onClick={() => { toPage('responsibility', 'about') ; window.scrollTo(0, 0);}}>READ MORE<span> </span></span>
                                 </div>
                                 
 
@@ -174,7 +192,7 @@ export default function AboutHome() {
                                     Headquarters<br />
                                     Linktel USA<br />
                                     Linktel Malaysia<br />
-                                 <span className='readmore' onClick={() => { toPage('contact', 'about') }}>READ MORE<span></span></span>
+                                 <span className='readmore' onClick={() => { toPage('contact', 'about'); window.scrollTo(0, 0); }}>READ MORE<span></span></span>
                                 </div>
                                 
                             </div>

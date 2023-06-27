@@ -4,12 +4,15 @@ import imgBg2 from '@/static/img/an_item2.jpg'
 
 import './index.scss'
 export default function CardNews(props) {
-    const{title,infoList,img,link}=props
+    const{title,infoList,img,link,outlink}=props
     return (
         <div className='card_news'>
             <Row justify={'center'} className='newstable'>
                 <Col className='newsleft'>
-                    <div className='infomation'onClick={link} >
+                    <div className='infomation'onClick={() => {
+                        link(); // 执行原有onclick事件
+                        document.querySelector('#top').scrollIntoView(); // 滚动到#top
+                        }}>
                         <div className='title' >{title}</div>
                         <div className='info'>
   {infoList?.map(item => {

@@ -214,9 +214,19 @@ export default function Home() {
                                 <div className='nav_box' style={pFlag !== index ? {height:0} : {height:item.nextmenu.length*33+'px'}}>
                                     {item.nextmenu.map((item2, index2) => {
                                         return (
-                                            <div key={index2} className='info_nav' onClick={()=>{toPage(item2.link)}}>
-                                                {item2.menu}
-                                            </div>
+                                            <div 
+  key={index2} 
+  className='info_nav' 
+  onClick={() => {
+    if (!item2.link.includes('http')) {
+      toPage(item2.link);
+    } else {
+      window.open(item2.link);
+    }
+  }} 
+>
+  {item2.menu}
+</div>
                                         )
                                     })}
                                 </div>
