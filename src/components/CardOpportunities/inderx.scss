@@ -1,5 +1,9 @@
 .card_opportunities {
-
+    .readmore{
+    &:hover{
+         color: #fff;
+    }       
+        }
     height: 100%;
     background: linear-gradient(180.00deg, rgba(239, 239, 239, 1.00), rgba(236, 241, 249, 0.00) 100%);
     padding: 26px 37px;
@@ -340,8 +344,3 @@
             }
     }
 }
-.readmore{
-    &:hover{
-         color: #fff;
-    }       
-        }

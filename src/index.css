@@ -140,6 +140,6 @@ flex: 1;
 max-width: 100%;
 }
 }
-:where(.css-ed5zg0).ant-row-center{
+:where(.css-ed5zg0).ant-row-center,:where(.css-dev-only-do-not-override-ed5zg0).ant-row{
   gap: 0;
 }

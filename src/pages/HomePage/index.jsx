@@ -55,7 +55,8 @@ export default function HomePage() {
     }, [activtyKey])
     const getInfo = async () => {
         let res = await Http.to.items("banner").readByQuery({
-            sort: ['id'],
+            sort: ['sort'],
+             filter: { status: "published" }
         });
         setInfo(res.data[0] ?? {});
         let arr = [];
@@ -187,8 +188,8 @@ export default function HomePage() {
                                 <div className='title_h1'>
                                     Exhibition
                                 </div>
-                                <Row justify={"center"}>
-                                    <Col sm={24} xl={10} >
+                                <Row justify={"center"}  className='newstable'>
+                                    <Col sm={24} xl={10} className='newstableleft' >
                                         <div className='infomation'>
                                             <div className='title'>
                                                 {newInfo?.Title}
@@ -200,7 +201,7 @@ export default function HomePage() {
                                             
                                         </div>
                                     </Col>
-                                    <Col sm={24} xl={14} >
+                                    <Col sm={24} xl={14}  className='newstableright'>
                                         <div className='img_info'>
 
                                             {newImg && <div className='img_pri' style={{ backgroundImage: `url(${ConstValue.url + "assets/" + newImg})` }}>

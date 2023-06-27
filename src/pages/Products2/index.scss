@@ -1,5 +1,5 @@
 .products2 {
-    
+
 
     
     .info {
@@ -67,11 +67,19 @@
         min-height: 1000px;
         display: flex;
         width: 100%;
-        .ant-row{
-            width: 100%;
+        >.ant-row{
+            width: 80%;
             gap:24px;
-        @media (max-width: 1000px){
-           align-items: center;
+            margin: 0 auto;
+            .ant-row{
+            gap:24px; 
+            }
+        @media (max-width: 850px){
+            width: 90%;
+        } 
+        @media (max-width: 750px){
+            flex-direction: column;
+            height: 100%;
         } 
             
         }
@@ -91,6 +99,7 @@
                 align-items: flex-start;
                 width: 100%;
                 margin-bottom: 20px;
+                justify-content: center;
                  @media (max-width: 1000px){
                 margin-bottom: 32px; 
         } 
@@ -98,16 +107,16 @@
                     background-repeat: no-repeat;
                     max-width: 280px;
                     width: 90vw;
-                    height: 180px;
+                    height: 60vw;
+                    max-height: 180px;
                     background-size: cover;
                     position: relative;
                     margin-right: 0;
                     background-size: cover;
                     background-position: center;
-                     @media (max-width: 1000px){
+                     @media (max-width: 640px){
                      max-width: 640px;
-                     width: 90vw;
-                     height: 80vw;
+                     max-height: 400px;
         } 
                     
                     &::after {
@@ -134,7 +143,6 @@
             }
                     span:nth-child(1) {
                         font-size: 20px;
-
                         font-weight: 600;
                     }
                     span:nth-child(2) {
@@ -204,8 +212,8 @@
         width:30%;
         max-width: 30%;
         @media (min-width: 1600px){
-           width:20%;
-        max-width: 20%; 
+           width:25%;
+        max-width: 25%; 
         } 
         @media (max-width: 1100px){
         width:100%;
@@ -217,13 +225,13 @@
           width:70%;
           max-width: 70%;
           @media (min-width: 1600px){
-           width:80%;
-        max-width: 80%; 
+           width:75%;
+        max-width: 75%; 
         } 
         @media (max-width: 1100px){
         width:100%;
         max-width: 720px; 
-        padding: 20px;
+        padding: 0;
         } 
       } 
     }

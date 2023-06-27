@@ -105,7 +105,7 @@ export default function Products2() {
             </div>
             <div className="solutions">
                 <Row justify={'center'}>
-                    <Col sm={24} xl={12}>
+                    <Col sm={24} xl={12} className="productleft">
                         <div className="solution" dangerouslySetInnerHTML={{ __html: info2?.[curr2]?.text }}>
 
                             {/* <span className='title'>1G solutions</span> */}
@@ -113,7 +113,7 @@ export default function Products2() {
                             {/* <span className='item2'>Linktel’s family of 800G transceivers accelerate data connectivity for data center Interconnection and Metro Networks. Our complete product line includes OSFP 2xFR4，OSFP 2xLR4，QSFP-DD DR8，QSFP-DD DR8+，QSFP-DD DR8++ series for applications up to 800 Gb/s. Each transceiver solution leverages Linktel's optoelectronic Integration technology for the transmission of data while reducing the size and power dissipation of traditional high speed design.</span> */}
                         </div> 
                     </Col>
-                    <Col sm={24} xl={12}>
+                    <Col sm={24} xl={12} className="productright">
                         <div className='items'>
                             {info3.map((item, index) => {
                                 return (
