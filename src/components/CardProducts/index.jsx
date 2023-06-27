@@ -11,7 +11,12 @@ export default function CardProducts(props) {
       <div className='name'>{titleout}</div>
       <div className='bg_lin'></div>    
         {info?.map(item=><span   dangerouslySetInnerHTML={{ __html:item}} key={item}></span>)}
-        <span className='readmore' onClick={link}>READ MORE<span></span></span>
+        <span className='readmore' onClick={() => {
+  link();
+  document.querySelector('#top').scrollIntoView(); 
+}}>
+  READ MORE<span></span>
+</span>
       </div>
     </div>
   )

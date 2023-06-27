@@ -49,9 +49,14 @@ export default function AboutNav() {
                             <Menu.Item key="https://quote.eastmoney.com/SZ301205.html" >
                                 <span>Investors</span>
                             </Menu.Item>
-                            <Menu.Item key="exhibition" >
-                                <span>News</span>
-                            </Menu.Item>
+                            <Menu.SubMenu key="news" title="News" className='ant-menu-item'>
+    <Menu.Item key="exhibition">
+      <span>Exhibition</span>
+    </Menu.Item>
+    <Menu.Item key="events">
+      <span>Events</span>
+    </Menu.Item>
+  </Menu.SubMenu>
                             <Menu.Item key="quality" >
                                 <span>Quality</span>
                             </Menu.Item>

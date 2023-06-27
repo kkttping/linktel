@@ -25,7 +25,8 @@ export default function AboutQuality() {
 
     const getInfo = async () => {
         let res = await Http.to.items("Certificate").readByQuery({
-            sort: ['id'],
+            sort: ['sort'],
+            filter: { 'status': 'published', }
         });
         setQuality(res.data)
     }

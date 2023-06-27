@@ -23,7 +23,7 @@ export default function AboutCulture() {
 
     const getInfo = async () => {
         let res = await Http.to.items("Culture").readByQuery({
-            sort: ['id'],
+            sort: ['sort'],
         });
         setCultureList(res.data)
     }

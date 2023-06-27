@@ -4,7 +4,6 @@ import imgBg from '@/static/img/al_bg1.jpg'
 import NavLink from '@/components/NavLink'
 import AboutNav from '@/components/AboutNav'
 import { Modal, Row, Col } from 'antd'
-import imgitem3 from '@/static/img/ah_item3.jpg'
 import imgPerson from '@/static/img/al_item1.jpg'
 import rightDir from '@/static/svg/right_dir2.svg'
 import Http from "@/utils/http";
@@ -47,7 +46,8 @@ export default function AboutLeadership() {
 
     const getInfo = async () => {
         let res = await Http.to.items("Leadership").readByQuery({
-            sort: ['id'],
+            sort: ['sort'],
+            filter: { 'status': 'published', }
         });
         setLeadershipList(res.data)
     }

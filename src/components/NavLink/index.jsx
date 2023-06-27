@@ -11,17 +11,36 @@ export default function NavLink(props) {
         <div className='nav_link'>
             <div className='nav'>
                 <div className='left'>
-                    <div className='home' onClick={()=>toPage('home')}></div>
-                    <div className="link">
-                        <span onClick={props?.link1}>{props?.title1}</span>
-                        <span> · </span>
-                        <span onClick={props?.link2}>{props?.title2}</span>
-                        {props?.title3 && (
-                            <><span> · </span>
-                                <span onClick={props?.link3}>{props?.title3}</span></>
-                        )}
-
-                    </div>
+                    <div className='home' onClick={()=>{
+  toPage('home');
+  document.querySelector('#top').scrollIntoView(); 
+}}></div>
+<div className="link">
+  <span onClick={() => {
+    props?.link1();
+    document.querySelector('#top').scrollIntoView(); 
+  }}> 
+    {props?.title1}
+  </span>
+  <span> · </span>
+  <span onClick={() => {
+    props?.link2();
+    document.querySelector('#top').scrollIntoView(); 
+  }}>
+    {props?.title2}    
+  </span> 
+  {props?.title2 && props?.title3 && (  
+      <>  
+        <span> · </span>
+        <span onClick={() => {
+          props?.link3();
+          document.querySelector('#top').scrollIntoView(); 
+        }}>  
+          {props?.title3}
+        </span>  
+      </>
+  )} 
+</div>
                 </div>
                 <div className='right' onClick={() => window.history.back()}>
                     <div className='return'></div>

@@ -10,7 +10,7 @@ class ConstValue {
    * @memberof ConstValue
    * @type {Number} 
    */
-  static url ='https://linktelcms.zeaylu.com/';
+  static url ='./';
 
 
 

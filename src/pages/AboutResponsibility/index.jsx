@@ -16,8 +16,8 @@ export default function AboutResponsibility() {
     const [info, setInfo] = useState([]);
 
 
-    const toPage = (address, info) => {
-        navigate('/' + address + '/' + info);
+    const toPage = (address, routerName) => {
+        navigate('/' +address);
     }
     useEffect(() => {
         getInfo("New");
@@ -25,7 +25,7 @@ export default function AboutResponsibility() {
 
     const getInfo = async (url) => {
         let res = await Http.to.items(url).readByQuery({
-            sort: ['id'],
+            sort: ['-sort', 'date_updated'],
             filter: {
                 type
                     :

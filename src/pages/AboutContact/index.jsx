@@ -98,7 +98,8 @@ export default function AboutContact() {
     }, [selectMap])
     const getMapInfo = async () => {
         let res = await Http.to.items("office").readByQuery({
-            sort: ['id'],
+            sort: ['sort'],
+            filter: { 'status': 'published', }
         });
         setMapList(res.data)
         res.data.forEach((item, index) => {
@@ -141,10 +142,30 @@ export default function AboutContact() {
 
                     </div>
                     <div className='content_info'>
-                        <div className="title">{mapList[selectMap]?.Company}</div>
-                        <div className="address"><div className='svg_address'></div><div style={{width: '90%'}} >{mapList[selectMap]?.Address}</div></div>
-                        <div className="phone"><div className='svg_phone'></div><div style={{width: '90%'}} >{mapList[selectMap]?.Phone}</div></div>
-                        <div className="email"><div className='svg_email'></div><div style={{width: '90%'}} >{mapList[selectMap]?.Email}</div></div>
+                        <div className="title">
+  {mapList[selectMap]?.Company && <div>{mapList[selectMap]?.Company}</div>}
+</div>
+{
+  mapList[selectMap]?.Address && 
+  <div className="address">
+    <div className='svg_address'></div>
+    <div style={{width: '90%'}} >{mapList[selectMap]?.Address}</div>
+  </div> 
+}
+{
+  mapList[selectMap]?.Phone &&
+  <div className="phone">
+    <div className='svg_phone'></div>
+    <div style={{width: '90%'}} >{mapList[selectMap]?.Phone}</div>
+  </div>
+}  
+{
+  mapList[selectMap]?.Email && 
+  <div className="email">
+    <div className='svg_email'></div>
+    <div style={{width: '90%'}} >{mapList[selectMap]?.Email}</div>
+  </div> 
+}
                     </div>
                 </div>
                 <div className='infomation'>

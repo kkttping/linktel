@@ -1,5 +1,9 @@
 .products3 {
     width: 100%;
+    margin-top: 72px;
+    @media (max-width:640px){
+        margin-top: 60px;
+    }
 
 .download{
     display: flex;

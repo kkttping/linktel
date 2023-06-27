@@ -4,7 +4,6 @@ import TopInfo from '@/components/TopInfo'
 import { Menu, Row, Col } from 'antd'
 import imgitem1 from '@/static/img/ah_item1.jpg'
 import imgitem2 from '@/static/img/ah_item2.jpg'
-import imgitem3 from '@/static/img/ah_item3.jpg'
 import imgitem6 from '@/static/img/ah_item6.jpg'
 import imgitem7 from '@/static/img/ah_item7.jpg'
 import imgText from '@/static/img/ah_text1.jpg'
@@ -32,7 +31,7 @@ export default function AboutHome() {
 
     const getInfo = async () => {
         let res = await Http.to.items("Leadership").readByQuery({
-            sort: ['id'],
+            sort: ['sort'],
             filter: {
                 Recommend
                     :
@@ -105,7 +104,7 @@ export default function AboutHome() {
   className={imgSelect === index ? 'select_img activty' : 'select_img'}
   onClick={() => {
     setImgSelect(index);
-    window.scrollTo(0, 0); 
+   
   }} 
 >
   <img src={ConstValue.url + "assets/" + item?.Thumbnail} alt="" />
@@ -114,7 +113,7 @@ export default function AboutHome() {
                                         )
                                     })}
 
-                                    <div className='img' onClick={() => { toPage('leadership', 'about') }}></div>
+                                    <div className='img' onClick={() => { toPage('leadership', 'about') ; window.scrollTo(0, 0); }}></div>
                                 </div>
                             </div>
                         </Col>

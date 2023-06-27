@@ -1,8 +1,16 @@
 .about_nav {
-
+    :where(.css-dev-only-do-not-override-ed5zg0).ant-menu-light .ant-menu-submenu-selected >.ant-menu-submenu-title, :where(.css-dev-only-do-not-override-ed5zg0).ant-menu-light>.ant-menu .ant-menu-submenu-selected >.ant-menu-submenu-title{
+        color:rgb(0, 61, 166);
+    }
+    
     .select {
         padding: 14px 0;
         background: linear-gradient(270.00deg, rgba(160,182,222,0.00),rgba(160,182,222,0.2) 49.792%,rgba(160,182,222,0.00) 100%);
+        .ant-menu-submenu-title{
+        >.ant-menu-title-content{
+
+        font-weight: 500;
+    }}
         .ant-menu-overflow {
             justify-content: center;
         }
