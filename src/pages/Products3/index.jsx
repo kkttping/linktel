@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './index.scss'
 import img_bg from '@/static/img/bg_3.jpg'
-import { Carousel, Row, Col, Table } from 'antd'
+import { Carousel, Row, Col, Table, message,Button } from 'antd'
 import NavLink from '@/components/NavLink'
 import { useParams } from 'react-router-dom';
 import Http from "@/utils/http";
@@ -10,15 +10,19 @@ import {
 } from '@ant-design/icons';
 import ConstValue from "@/utils/value";
 import { useNavigate } from "react-router-dom";
+import { get, post } from '@/requests'
 
 export default function Products3() {
     const [activtyKey, setActivtyKey] = useState(0);
+    const [flag, setflag] = useState({});
+    const [flag2, setflag2] = useState({});
+
     const carRfe = useRef();
     const getParams = useParams();
     const [info, setInfo] = useState({});
     const [info2, setInfo2] = useState([{}]);
     const [infoImg, setInfoImg] = useState([]);
-
+    const [messageApi, contextHolder] = message.useMessage();
     const navigate = useNavigate()
 
     const selectArr = [{
@@ -94,28 +98,78 @@ export default function Products3() {
 
         },
         {
-           title: 'download',
-           key: 'operation',
-           fixed: 'right',
-           width: 59,
-           render: (e) =>  
-           e?.download && <div className='download'>
-           <a onClick={() => { download(ConstValue.url + "assets/" + e?.download) }}>
-           <CloudDownloadOutlined />
-           </a> 
-           </div> 
-    },
+            title: 'download',
+            key: 'operation',
+            fixed: 'right',
+            width: 59,
+            render: (e, t, index) => { return (e.part_no && (!flag[index]) ? ((!flag2[index])?(<div className='download'><a onClick={(item) => { download(e, 'data', index) }} ><CloudDownloadOutlined /></a> </div>):<div className='svg_load'></div>):<div className='download'><Button  disabled type="link"><CloudDownloadOutlined style={{fontSize:'20px'}}/></Button></div> ) }
+        },
     ];
-    function download(url = '', fileName = 'data') {
-        const a = document.createElement('a');
-        a.style.display = 'none';
-        a.setAttribute('target', '_blank');
+    async function download(e = {}, fileName = 'data', index) {
+        let url = '';
+        let obj = { ...flag2 };
+            obj[index] = true
+            setflag2(obj);
+        let res = await get(`files?limit=25&fields[]=id&fields[]=modified_on&fields[]=type&fields[]=title&fields[]=type&fields[]=filesize&sort[]=-uploaded_on&page=1&filter=%7B%22_and%22:[%7B%22_and%22:[%7B%22filename_download%22:%7B%22_contains%22:"${e.part_no}"%7D%7D]%7D,%7B%22_and%22:[%7B%22type%22:%7B%22_nnull%22:true%7D%7D,%7B%22folder%22:%7B%22_eq%22:%22579b7761-8fcb-455f-96c7-8112e22d8aab%22%7D%7D]%7D]%7D&meta[]=filter_count&meta[]=total_count`)
+        if (!(res?.data?.[0]?.id)) {
+            let obj = { ...flag };
+            obj[index] = true
+            setflag(obj);
 
-        fileName && a.setAttribute('download', fileName);
-        a.href = url;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+            messageApi.open({
+                type: 'error',
+                content: 'The product has no download resources. Please contact staff to obtain. ',
+                className: 'custom-class',
+                style: {
+                    marginTop: '40vh',
+                },
+            })
+            return
+        };
+        res?.data.forEach(item => {
+            console.log(item);
+            console.log(item);
+            console.log(item);
+
+            let url = './assets/' + item?.id;
+            // const a = document.createElement('a');
+            // a.style.display = 'none';
+            // a.setAttribute('target', '_blank');
+
+            // fileName && a.setAttribute('download', '');
+            // a.href = url;
+            // document.body.appendChild(a);
+            // a.click();
+            // console.dir(a);
+            // document.body.removeChild(a);
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true); // 也可用POST方式
+            xhr.responseType = "blob";
+            xhr.onload = function () {
+                if (this.status === 200) {
+                    var blob = this.response;
+                    if (navigator.msSaveBlob == null) {
+                        var a = document.createElement('a');
+                        var fileName = item.title
+                        a.download = fileName;
+                        a.href = URL.createObjectURL(blob);
+                        document.body.appendChild(a);
+                        a.click();
+                        URL.revokeObjectURL(a.href);
+                        document.body.removeChild(a);
+                    } else {
+                        navigator.msSaveBlob(blob, fileName);
+                    }
+                }
+                let obj = { ...flag2 };
+                obj[index] = false
+                setflag2(obj);
+            };
+            xhr.send()
+
+        })
+
     }
     const selectChange = (index) => {
         carRfe.current.goTo(index); setActivtyKey(index);
@@ -135,17 +189,21 @@ export default function Products3() {
             fields: ['*'],
             filter: { "Pluggable_Transceiver_id": res.data?.id + '' }
         });
+        let res3 = await Http.to.items("Pluggable_Transceiver_product_specifications").readByQuery({
+            fields: ['*'],
+            filter: { "Pluggable_Transceiver_id": getParams?.id }
+        });
         setInfoImg(res2.data);
-        getInfo2(res.data.specification)
+        console.log(res3?.data);
+        getInfo2(res3?.data?.map(item => item?.product_specifications_id))
         setInfo(res.data)
     }
 
     const getInfo2 = async (ids) => {
-        let res3 = await Http.to.items("product_specifications" ).readByQuery({
+        let res3 = await Http.to.items("product_specifications").readByQuery({
             sort: ['id'],
-            filter:{'_or':ids.map(item=>{return {'id':item}})}
+            filter: { '_or': ids.map(item => { return { 'id': item } }) }
         });
-        console.log(res3);
         let arr = []
         // for (let i = 0; i < ids.length; i++) {
         //     let res = await Http.to.items("product_specifications/" + ids[i]).readByQuery({
@@ -167,6 +225,7 @@ export default function Products3() {
     }
     return (
         <div className='products3'>
+            {contextHolder}
             <NavLink title1={'Products'} link1={() => { toPage('products') }} title2={navInfo[getParams?.id2]} link2={() => { toPage('products2/' + getParams?.id2) }} title3={info?.name} />
             {infoImg.length !== 0 &&
                 (
@@ -208,7 +267,7 @@ export default function Products3() {
                             <div className='item_content' dangerouslySetInnerHTML={{ __html: info?.description }}></div>
                         </div>
                     </Col>
-                    <Col xs={24} sm={24} xl={8}  className='leftborder'>
+                    <Col xs={24} sm={24} xl={8} className='leftborder'>
                         {
                             info?.features && <div className='right'>
                                 <div className='item'>
@@ -222,7 +281,7 @@ export default function Products3() {
                         }
 
                         {
-                            info?.application && <div className='right' style={{ marginTop: '24px', marginBottom: '24px'}}>
+                            info?.application && <div className='right' style={{ marginTop: '24px', marginBottom: '24px' }}>
                                 <div className='item'>
                                     <div className='title'>
                                         Application

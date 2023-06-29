@@ -78,7 +78,7 @@ export default function Search() {
   return (
     <div className='search'>
       <div className='top'>
-        <div className='title'>search</div>
+        <div className='title'>Search</div>
         <div className='search_box'><Input value={searchValue} onChange={(e) => { setSearchValue(e.target.value) }} placeholder={"Please enter keyword search"} /> <div className='button' onClick={() => getInfo()}><div className='svg'></div></div></div>
       </div>
       <div className='content'>

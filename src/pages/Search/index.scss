@@ -1,4 +1,8 @@
 .search {
+    margin-top: 73px;
+    @media(max-width:640px){
+        margin-top: 60px;
+    }
     .nothing {
         width: 100%;
         display: flex;

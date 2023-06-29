@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { message } from 'antd';
-const baseURL = '/api/'
+const baseURL = ''
 let timer = 0;
 axios.interceptors.request.use(
     config => {
@@ -73,7 +73,7 @@ export const post = (url,params,base)=>{
 export const get=(url,params,base)=>{
     return axios({
         method:'get',
-        url:setParamsToUrl(`${baseURL||base}${url}`,params)
+        url:setParamsToUrl(`${url}`,params)
     })
 }
 export const download=(url,params,base)=>{

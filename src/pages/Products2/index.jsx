@@ -31,7 +31,9 @@ export default function Products2() {
         getInfo2();
     }, []);
     useEffect(() => {
-        getInfo3()
+        getInfo3();
+        // navigate('/products2/'+getParams?.id)
+        console.log(curr);
     }, [curr]);
     const getInfo = async () => {
         let res = await Http.to.items("CLASSIFICATION/" + getParams?.id).readByQuery({
@@ -97,7 +99,7 @@ export default function Products2() {
                     <Menu  selectedKeys={[curr]} mode="horizontal" >
                         {info2.map((item, index) => {
                             return (<Menu.Item key={item.id} >
-                                <span onClick={() => {setcurr(item.id+'');setcurr2(index);document.getElementById('select').scrollIntoView(); }}>{item.name}</span>
+                                <span onClick={() => {setcurr(item.id+'');setcurr2(index);document.getElementById('select').scrollIntoView();navigate('/products2/'+getParams?.id+'/'+item.name) }}>{item.name}</span>
                             </Menu.Item>)
                         })}
                     </Menu>
