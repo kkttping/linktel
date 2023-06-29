@@ -16,8 +16,11 @@ export default function AboutResponsibility() {
     const [info, setInfo] = useState([]);
 
 
-    const toPage = (address, routerName) => {
-        navigate('/' +address);
+   const toPage = (address, info) => {
+        navigate('/' + address + '/' + info);
+    }
+   const toPage2 = (address, routerName) => {
+        navigate('/' + address);
     }
     useEffect(() => {
         getInfo("New");
@@ -46,7 +49,7 @@ export default function AboutResponsibility() {
     return (
         <div className='about_responsibility'>
             <TopInfo imgBg={imgBg} title={'Responsibility'} styleSelf={{ bgColor: '#000' }} info1={'LINK TO THE UNKNOWN'} info2={' '} />
-            <NavLink title1={'About'} link1={()=>{toPage('about')}} title2={'Responsibility'}/>
+            <NavLink title1={'About'} link1={()=>{toPage2('about')}} title2={'Responsibility'}/>
             <AboutNav />
             {info.map((item, index) => {
                 return (

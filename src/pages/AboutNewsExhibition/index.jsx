@@ -16,8 +16,10 @@ export default function AboutNewsExhibition() {
     const navigate = useNavigate()
     const [info, setInfo] = useState([]);
 
-
-   const toPage = (address, routerName) => {
+const toPage = (address, info) => {
+        navigate('/' + address + '/' + info);
+    }
+   const toPage2 = (address, routerName) => {
         navigate('/' + address);
     }
     useEffect(() => {
@@ -54,7 +56,7 @@ setInfo(arr);
     return (
         <div className='about_news_exhibition'>
             <TopInfo imgBg={imgBg} title={'News'} styleSelf={{ bgColor: '#000' }} />
-            <NavLink  title1={'About'} link1={()=>{toPage('about')}}  title2={'Exhibition'} />
+            <NavLink  title1={'About'} link1={()=>{toPage2('about')}}  title2={'Exhibition'} />
              <AboutNav />
             <NewsNav />
             {info.map((item, index) => {

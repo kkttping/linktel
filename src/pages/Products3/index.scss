@@ -151,6 +151,7 @@
             max-width: 1200px;
             position: relative;
             margin: 0 auto;
+            justify-content: space-between;
 
             @media (max-width: 900px) {
                 flex-direction: column;
