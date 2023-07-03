@@ -53,7 +53,16 @@ export default function AboutResponsibility() {
             <AboutNav />
             {info.map((item, index) => {
                 return (
-                    <CardNews2 key={index} link={() => toPage('newsInfo', item.id+'/'+item.type)} title={item.Title} infoList={[item.Preview]} img={ConstValue.url + "assets/" + item?.Img} />
+                    <CardNews2 key={index} 
+                    link={() => {
+                    if (item?.outlink) {
+                    const link = item?.outlink.startsWith('http') ? item?.outlink : `./#/${item?.outlink}`;
+                    window.open(link);    // 打开外链
+                    } else {
+                    return toPage('newsInfo', item.id+'/'+item.type);
+                    }
+                    }}
+                    title={item.Title} infoList={[item.Preview]} img={ConstValue.url + "assets/" + item?.Img} />
 
                 )
             })}

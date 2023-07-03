@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.4.7",
     "axios": "^1.4.0",
+    "marked": "^4",
     "rc-queue-anim": "^2.0.0",
     "rc-scroll-anim": "^2.7.6",
     "rc-texty": "^0.2.0",

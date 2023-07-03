@@ -1,4 +1,8 @@
 .market3 {
+    margin-top: 73px;
+    @media(max-width:640px){
+        margin-top: 60px;
+    }
 
     .title {
         background-color: rgb(184, 210, 255, 0.1);

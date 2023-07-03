@@ -62,9 +62,15 @@ setInfo(arr);
             {info.map((item, index) => {
                 return (
                     <CardNews 
-                    key={index} 
-                    link={() => toPage('newsInfo', 
-                    item.id + '/' + item.type)} 
+                    key={index}
+                    link={() => {
+                    if (item?.outlink) {
+                    const link = item?.outlink.startsWith('http') ? item?.outlink : `./#/${item?.outlink}`;
+                    window.open(link);    // 打开外链
+                    } else {
+                    return toPage('newsInfo', item.id+'/'+item.type);
+                    }
+                    }}
                     title={item.Title} 
                     infoList={item.Exhibition.split('/n')} 
                     img={ConstValue.url + "assets/" + item?.Img} 

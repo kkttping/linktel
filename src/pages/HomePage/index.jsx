@@ -92,12 +92,12 @@ export default function HomePage() {
     }
     const getNews = async () => {
         let res = await Http.to.items("New").readByQuery({
-            sort: ['id'],
+            sort: ['-sort'],
 
             fields: ['*'],
 
 
-            filter: { 'Homepage': 'true', status: "published" }
+            filter: { 'Homepage': 'true', status: "published" ,type: "Exhibition" }
         });
         let res2 = await Http.to.items("New_Content").readByQuery({
             sort: ['id'],
@@ -197,7 +197,20 @@ export default function HomePage() {
                                             <div className='info' dangerouslySetInnerHTML={{ __html: newInfo?.Exhibition?.replace(/\n/g, "<br/>") }}>
                                             </div>
                                             
-                                            <span className='readmore' onClick={() => { toPage('newsInfo/' + newInfo?.id + '/' + newInfo?.type) ; window.scrollTo(0, 0); }}>READ MORE <span></span></span>
+                                           <span 
+  className='readmore' 
+  onClick={() => {
+    if (newInfo?.outlink) {
+      const link = newInfo?.outlink.startsWith('http') ? newInfo?.outlink : `/#/${newInfo?.outlink}`;
+      window.open(link);
+    } else {
+      toPage('newsInfo/' + newInfo?.id + '/' + newInfo?.type)
+    }
+    window.scrollTo(0, 0);
+  }}
+>
+  READ MORE <span></span>
+</span>
                                             
                                         </div>
                                     </Col>

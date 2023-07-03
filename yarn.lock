@@ -4975,7 +4975,7 @@ fs.realpath@^1.0.0:
 
 fsevents@^2.3.2, fsevents@~2.3.2:
   version "2.3.2"
-  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
 function-bind@^1.1.1:
@@ -6661,6 +6661,11 @@ mapvgl@^1.0.0-beta.179:
   version "1.0.0-beta.179"
   resolved "https://registry.npmjs.org/mapvgl/-/mapvgl-1.0.0-beta.179.tgz"
   integrity sha512-f3dsy1no3L9lwN1Hc66yRaPHTMGTfDWYEP0HsJDcUboC5Bq7n9yLKw9W8dfvihqqLVLqrE+1OyRsyf0/CC0tYQ==
+
+marked@^4:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-4.3.0.tgz#796362821b019f734054582038b116481b456cf3"
+  integrity sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==
 
 mdn-data@2.0.14:
   version "2.0.14"

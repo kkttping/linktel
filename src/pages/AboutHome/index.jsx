@@ -41,7 +41,7 @@ export default function AboutHome() {
             }
         });
         let res2 = await Http.to.items('New').readByQuery({
-            sort: ['id'],
+            sort: ['-sort', 'date_updated'],
             filter: {
                 type
                     :
@@ -146,11 +146,20 @@ export default function AboutHome() {
                                                 <div className='news_info'>{news
                                                     .Title
                                                 }</div>
-                                                <span className='readmore' onClick={() => {
-    toPage2('newsInfo', news.id + '/' + news.type); 
-    window.scrollTo(0, 0); 
+                                               <span 
+  className='readmore' 
+  onClick={() => {
+    if (news.outlink) {
+      const link = news.outlink.startsWith('http') ? news.outlink : `/#/${news.outlink}`;
+      window.open(link);
+    } else {
+      toPage2('newsInfo', news.id + '/' + news.type); 
+    }
+    window.scrollTo(0, 0);
   }}
->READ MORE<span></span></span>
+>
+  READ MORE <span></span>
+</span>
                                             </div>
                                         )}
 

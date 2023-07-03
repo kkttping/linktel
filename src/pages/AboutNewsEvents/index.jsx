@@ -64,18 +64,24 @@ setInfo(arr);
              <AboutNav />
             <NewsNav />
             {info.map((item, index) => {
-                return (
-                    <CardNews2
-                        key={index}
-                        link={() => toPage('newsInfo', item.id+'/'+item.type)}
-                        time={[`${timeSet((new Date(item?.date_created)).getMonth())}-${timeSet((new Date(item?.date_created)).getDay())}`, (new Date(item?.date_created)).getFullYear()]}
-                        title={item?.Title}
-                        infoList={[item?.Preview]}
-                        img={ConstValue.url + "assets/" + item?.Img}
-
-                    />
-                )
-            })}
+  return (
+    <CardNews2
+      key={index}
+      link={() => {
+        if (item?.outlink) {
+          const link = item?.outlink.startsWith('http') ? item?.outlink : `./#/${item?.outlink}`;
+    window.open(link);    // 打开外链
+        } else {
+          return toPage('newsInfo', item.id+'/'+item.type);
+        }
+      }}
+      time={[`${timeSet((new Date(item?.date_created)).getMonth())}-${timeSet((new Date(item?.date_created)).getDay())}`, (new Date(item?.date_created)).getFullYear()]}
+      title={item?.Title}
+      infoList={[item?.Preview]}
+      img={ConstValue.url + "assets/" + item?.Img}
+    />
+  ) 
+})}
         </div>
     )
 }
