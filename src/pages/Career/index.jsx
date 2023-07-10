@@ -32,12 +32,12 @@ export default function Career() {
     }
     return (
         <div className='career'>
-            <TopInfo imgBg={imgBg} title={'Markets'} info1={'LINK TO THE UNKNOWN'} info2={' '} />
+            <TopInfo imgBg={imgBg} title={'Career'} info1={'LINK TO THE UNKNOWN'} info2={' '} />
             <div className='content'>
                 <Row justify={"center"} className='careertable'>
                     <Col sm={24} xl={12} >
                         <div className='card_item'>
-                            <CardProducts link={() => { toPage('message', 'career') }} img={imgitem1} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={"General Manager's Message"} titleIn={"General Manager's Message"} info={['Focusing on technologies and products, Linktel Technologies has become one of the fastest developing companies in the field of ...']} ></CardProducts>
+                            <CardProducts link={() => { toPage('message', 'career') }} img={imgitem1} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={"General Manager Speech"} titleIn={"General Manager's Message"} info={['Focusing on technologies and products, Linktel Technologies has become one of the fastest developing companies in the field of ...']} ></CardProducts>
                         </div>
                     </Col>
                     <Col sm={24} xl={12} >

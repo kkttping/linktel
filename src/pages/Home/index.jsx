@@ -44,8 +44,8 @@ export default function Home() {
             ]
         },
         {
-            name: 'Markets',
-            next: 'markets'
+            name: 'Application',
+            next: 'markets2'
         },
         {
             name: 'About',

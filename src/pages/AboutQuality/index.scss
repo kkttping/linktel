@@ -5,6 +5,20 @@
         height: 400px;
     }
     .content{
+         .quality_top{  
+      display: flex;
+      line-height: 1.2;  
+      font-weight: bold;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 900px;
+      margin: 3rem auto;
+       p1{
+      font-size: 1.5rem;
+        }
+    }
+       
         .img_top{
             width: 100%;
             max-width: 1200px;

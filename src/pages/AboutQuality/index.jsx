@@ -36,6 +36,9 @@ export default function AboutQuality() {
             <NavLink title1={'About'} link1={()=>{toPage('about')}} title2={'Quality'}/>
             <AboutNav />
             <div className='content'>
+             <div className='quality_top'>   <p1>
+           We believe that quality is an indispensable part in an enterprise's operations. At Linktel, quality is essential to our customers, our shareholders, our company, and our future.
+        </p1> </div>
                 <div className='img_top'>
                     <img src={imgItem1} alt="" />
                 </div>
