@@ -13,27 +13,44 @@ import ConstValue from "@/utils/value";
 import './index.scss'
 export default function CareerWorkAtLinktel() {
     const [info, setInfo] = useState({});
+    const [scriptdata, setscriptdata] = useState('');
 
     const navigate = useNavigate()
     const toPage = (address, routerName) => {
-        navigate('/' +address);
+        navigate('/' + address);
     }
-    useEffect(()=>{
+    useEffect(() => {
         getInfo()
-    },[])
+    }, [])
     const getInfo = async () => {
-        let res = await Http.to.items("Work_At_Linktel" ).readByQuery({
+        let res = await Http.to.items("Work_At_Linktel").readByQuery({
             sort: ['id'],
         });
         setInfo(res.data)
+        let arr1 = res.data?.content?.split('<script src="')?.[1]?.split('"');
+        setscriptdata(arr1?.[0]);
+        addExternalScript(arr1?.[0])
     }
-    return (
-        <div className='career_work_at_linktel'>
-            <TopInfo imgBg={imgBg} title={"Work At Linktel"} info1={"LET'S GROW UP TOGETHER WITH YOU"} info2={'TO CREATE INFINITE POSSIBILITY'} />
-            <NavLink title1={'Career'} link1={()=>{toPage('career')}} title2={"Work At Linktel"} />
-            <CareerNav />
-            <div className='content' dangerouslySetInnerHTML={{__html:info?.content}}></div>
-            {/* <div className='content'>
+
+    // 添加js文件
+    function addExternalScript(src) {
+        if(src===undefined)return
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = () => resolve();
+            script.onerror = () => reject();
+            document.body.appendChild(script);
+        });
+    }
+
+        return (
+            <div className='career_work_at_linktel'>
+                <TopInfo imgBg={imgBg} title={"Work At Linktel"} info1={"LET'S GROW UP TOGETHER WITH YOU"} info2={'TO CREATE INFINITE POSSIBILITY'} />
+                <NavLink title1={'Career'} link1={() => { toPage('career') }} title2={"Work At Linktel"} />
+                <CareerNav />
+                <div className='content' dangerouslySetInnerHTML={{ __html: info?.content }}></div>
+                {/* <div className='content'>
                 <div className="title">
                     Linktel Technologies is full of youth and energy. The environment, systems and codes of conduct here embody the concept of "People First".
                 </div>
@@ -83,6 +100,6 @@ export default function CareerWorkAtLinktel() {
                 </div>
             </div> */}
 
-        </div>
-    )
-}
+            </div>
+        )
+    }
