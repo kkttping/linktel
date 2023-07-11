@@ -146,11 +146,12 @@ export default function Home() {
             sort: ['id'],
         });
         setInfo(res.data);
+        console.log(res.data);
     }
     const next = (data) => {
         if (data instanceof Array) {
             setshowList(data);
-           
+
         } else {
             toPage(data);
             setshowmask(false);
@@ -169,13 +170,13 @@ export default function Home() {
                     setCurrent('home')
                 }
             }}>
-                <div className="tag" onClick={()=>{toPage('home')}}>
+                <div className="tag" onClick={() => { toPage('home') }}>
                 </div>
                 <div className="menu">
                     <Menu current={[current]} onClick={menuonClick} mode="horizontal"  >
-                        {items.map((item, index) => {
-                            return <Menu.Item key={item.key}>
-                                <div onMouseOver={() => { setCurrentIndex(index) }}><span >{item.label}</span></div>
+                        {([{ menu: 'Home', link: 'home' }, ...(info?.nextmenu??[])]).map((item, index) => {
+                            return <Menu.Item key={item.link}>
+                                <div onMouseOver={() => { setCurrentIndex(index) }}><span >{item.menu}</span></div>
                             </Menu.Item>
                         })}
                     </Menu>
@@ -185,48 +186,48 @@ export default function Home() {
                 <div className="seach_icon2" style={{ backgroundImage: `url(${!showmask ? more : x})` }} onClick={() => { setshowmask(!showmask) }}>
                 </div>
 
-                <div ><div style={(currentIndex === 1) ? { height: 'auto', opacity: '1' } : ((currentIndex === 2 || currentIndex === 3 || currentIndex === 4) ? { height: '70px', opacity: '1' } : {})} className='nav_bottom_page'>< NavBottom type={currentIndex} /></div></div>
+                <div ><div style={(currentIndex === 1) ? { height: 'auto', opacity: '1' } : (( currentIndex === 3 || currentIndex === 4) ? { height: '70px', opacity: '1' } : {})} className='nav_bottom_page'>< NavBottom type={currentIndex} /></div></div>
                 <div className='mask' style={{ display: showmask ? 'flex' : 'none' }}>
                     <div className='menutop'>
-                        <div className="tag" onClick={()=>{toPage('home')}}>
-                </div>
-                <div className="menu">
-                    <Menu current={[current]} onClick={menuonClick} mode="horizontal"  >
-                        {items.map((item, index) => {
-                            return <Menu.Item key={item.key}>
-                                <div onMouseOver={() => { setCurrentIndex(index) }}><span >{item.label}</span></div>
-                            </Menu.Item>
-                        })}
-                    </Menu>
-                </div>
-                <div className='seach_icon_box'><div className="seach_icon" onClick={() => toPage('search')}>
-                </div></div>
-                <div className="seach_icon2" style={{ backgroundImage: `url(${!showmask ? more : x})` }} onClick={() => { setshowmask(!showmask) }}>
-                </div>
+                        <div className="tag" onClick={() => { toPage('home') }}>
+                        </div>
+                        <div className="menu">
+                            <Menu current={[current]} onClick={menuonClick} mode="horizontal"  >
+                                {([{ menu: 'Home', link: 'home' }, ...(info?.nextmenu??[])]).map((item, index) => {
+                                    return <Menu.Item key={item.link}>
+                                        <div onMouseOver={() => { setCurrentIndex(index) }}><span >{item.menu}</span></div>
+                                    </Menu.Item>
+                                })}
+                            </Menu>
+                        </div>
+                        <div className='seach_icon_box'><div className="seach_icon" onClick={() => toPage('search')}>
+                        </div></div>
+                        <div className="seach_icon2" style={{ backgroundImage: `url(${!showmask ? more : x})` }} onClick={() => { setshowmask(!showmask) }}>
+                        </div>
                     </div>
                     {/* {showList.map((item, index) => {
                         return <div key={index} onClick={() => next(item.next)}>{item.name}</div>
                     })} */}
                     {info?.nextmenu?.map((item, index) => {
                         return (
-                            <div key={index} className={ 'title_nav' } onClick={()=>setpFlag(index)} >
+                            <div key={index} className={'title_nav'} onClick={() => setpFlag(index)} >
                                 {item.menu}
-                                <div className='nav_box' style={pFlag !== index ? {height:0} : {height:item.nextmenu.length*33+'px'}}>
+                                <div className='nav_box' style={pFlag !== index ? { height: 0 } : { height: item.nextmenu.length * 33 + 'px' }}>
                                     {item.nextmenu.map((item2, index2) => {
                                         return (
-                                            <div 
-  key={index2} 
-  className='info_nav' 
-  onClick={() => {
-    if (!item2.link.includes('http')) {
-      toPage(item2.link);
-    } else {
-      window.open(item2.link);
-    }
-  }} 
->
-  {item2.menu}
-</div>
+                                            <div
+                                                key={index2}
+                                                className='info_nav'
+                                                onClick={() => {
+                                                    if (!item2.link.includes('http')) {
+                                                        toPage(item2.link);
+                                                    } else {
+                                                        window.open(item2.link);
+                                                    }
+                                                }}
+                                            >
+                                                {item2.menu}
+                                            </div>
                                         )
                                     })}
                                 </div>

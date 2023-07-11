@@ -76,7 +76,7 @@ export default function AboutContact() {
         script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVTk78W-PvhqUC08l6MBqUHTjJXSGcP4g&libraries=places&language=en-US';
         document.getElementById('root').appendChild(script);
         script.onload = () => {
-             googleMap = window.google && window.google.maps;
+            googleMap = window.google && window.google.maps;
             if (googleMap == undefined) return
             let mapProp = {
                 center: new googleMap.LatLng(0, 0),
@@ -143,29 +143,29 @@ export default function AboutContact() {
                     </div>
                     <div className='content_info'>
                         <div className="title">
-  {mapList[selectMap]?.Company && <div>{mapList[selectMap]?.Company}</div>}
-</div>
-{
-  mapList[selectMap]?.Address && 
-  <div className="address">
-    <div className='svg_address'></div>
-    <div style={{width: '90%'}} >{mapList[selectMap]?.Address}</div>
-  </div> 
-}
-{
-  mapList[selectMap]?.Phone &&
-  <div className="phone">
-    <div className='svg_phone'></div>
-    <div style={{width: '90%'}} >{mapList[selectMap]?.Phone}</div>
-  </div>
-}  
-{
-  mapList[selectMap]?.Email && 
-  <div className="email">
-    <div className='svg_email'></div>
-    <div style={{width: '90%'}} >{mapList[selectMap]?.Email}</div>
-  </div> 
-}
+                            {mapList[selectMap]?.Company && <div>{mapList[selectMap]?.Company}</div>}
+                        </div>
+                        {
+                            mapList[selectMap]?.Address &&
+                            <div className="address">
+                                <div className='svg_address'></div>
+                                <div style={{ width: '90%' }} >{mapList[selectMap]?.Address}</div>
+                            </div>
+                        }
+                        {
+                            mapList[selectMap]?.Phone &&
+                            <div className="phone">
+                                <div className='svg_phone'></div>
+                                <div style={{ width: '90%' }} >{mapList[selectMap]?.Phone}</div>
+                            </div>
+                        }
+                        {
+                            mapList[selectMap]?.Email &&
+                            <div className="email">
+                                <div className='svg_email'></div>
+                                <div style={{ width: '90%' }} >{mapList[selectMap]?.Email}</div>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div className='infomation'>
@@ -173,19 +173,19 @@ export default function AboutContact() {
                         Sales & Marketing
                     </div>
                     {linkList.map((item, index) => {
-  if (item?.status === 'published') {
-    return (
-      <div key={index} className='person_info'> 
-        <CardPersonInfo
-          title={item?.Project}
-          name={item?.contacts}
-          phone={item?.Phone}
-          email={item?.Email} 
-        />  
-      </div>
-    )
-  }
-})}
+                        if (item?.status === 'published') {
+                            return (
+                                <div key={index} className='person_info'>
+                                    <CardPersonInfo
+                                        title={item?.Project}
+                                        name={item?.contacts}
+                                        phone={item?.Phone}
+                                        email={item?.Email}
+                                    />
+                                </div>
+                            )
+                        }
+                    })}
 
                     <div className="content_title">
                         Leave Your Message

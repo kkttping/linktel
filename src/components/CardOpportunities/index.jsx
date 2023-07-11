@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './inderx.scss'
-import { Modal, Row, Col, Upload, message } from 'antd'
-import { InboxOutlined } from '@ant-design/icons';
+import { Modal, Row, Col, Upload, message, Button, Form, Input, Spin } from 'antd'
+import { FolderOpenOutlined } from '@ant-design/icons';
 import ConstValue from "@/utils/value";
 import Http from "@/utils/http";
 const { Dragger } = Upload;
@@ -10,6 +10,11 @@ export default function CardOpportunities(props) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [messageApi, contextHolder] = message.useMessage();
+    const [loadFlag, setloadFlag] = useState(false);
+    const [updata, setupdata] = useState(null);
+
+    const formRef = useRef()
+
     const handleOk = () => {
         setIsModalOpen(false);
     };
@@ -30,14 +35,22 @@ export default function CardOpportunities(props) {
                 content: 'Loading...',
             });
             if (info?.file?.response?.data) {
-                uploadData(info?.file?.response?.data)
+                setupdata(info?.file?.response?.data);
             }
         },
         showUploadList: false, maxCount: 1,
     };
-    const uploadData = async (data2) => {
+    const uploadData = async (data2, data3) => {
         let res = await Http.to.items("biographical_notes").createOne({
-
+            email
+                :
+                data3?.email,
+            name
+                :
+                data3?.name,
+            phone
+                :
+                data3?.phone,
             biographical: data2?.id,
             position: {
                 "create": [
@@ -63,9 +76,25 @@ export default function CardOpportunities(props) {
             })
         }
     }
+    const onFinish = (e) => {
+        if (updata === null) {
+            messageApi.open({
+                key: 'updatable',
+                type: 'error',
+                content: 'Please upload file',
+                style: {
+                    marginTop: '50vh',
+                },
+                duration: 2,
+            }); return;
+        }
+        uploadData(updata, e)
+    }
+    const onFinishFailed = () => { }
+
     return (
         <div className='card_opportunities'>
-            {contextHolder}      
+            {contextHolder}
             <div>
                 <div className="title_tag">Position</div>
                 <div className="title">{data?.position}</div>
@@ -106,7 +135,7 @@ export default function CardOpportunities(props) {
                             <div className='info'>{data?.Hiring}</div>
                         </div>
                     </div>
-                    <div className='info2'>
+                    <div className='info2' >
                         <div className='info2_title'>Requirements</div>
                         <div className='info2_text'>
                             {data?.Requirements}
@@ -117,9 +146,109 @@ export default function CardOpportunities(props) {
                         </div>
 
                     </div>
+                    <div className='info3'>
+                        <div className='info3_title'>Online delivery:</div>
+                        <div className='form'>
+                            <Form
+                                labelCol={{ span: 8 }}
+                                wrapperCol={{ span: 16 }}
+                                name="basic"
+                                ref={formRef}
+                                style={{
+                                    Width: 600,
+                                }}
+                                initialValues={{
+                                    remember: true,
+                                }}
+                                onFinish={onFinish}
+                                onFinishFailed={onFinishFailed}
+                                autoComplete="off"
+                            >
+                                <Row justify={'center'}>
+                                    <Col >
+                                        <Form.Item
+                                            name="name"
+                                            rules={[
+                                                {
+                                                    required: true,
+                                                    message: 'Please input your Name!',
+                                                },
+                                            ]}
+                                        >
+                                            <Input placeholder={"Your Name"} />
+                                        </Form.Item>
+                                    </Col>
+                                    <Col>
+                                        <Form.Item
+                                            name="email"
+                                            rules={[
+                                                {
+                                                    required: true,
+                                                    pattern: /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/,
+                                                    message: 'Please input your Email!',
+                                                },
+                                            ]}
+                                        >
+                                            <Input placeholder="Your Email" />
+                                        </Form.Item>
+                                    </Col>
+                                    <Col >
+                                        <Form.Item
+                                            name="phone"
+                                            rules={[
+                                                {
+                                                    required: true,
+                                                    message: 'Please input your Phone!',
+                                                },
+                                            ]}
+                                        >
+                                            <Input placeholder={"Your phone"} />
+                                        </Form.Item>
+                                    </Col>
+                                    <Col >
+                                        <Form.Item
+
+                                        >
+                                            <div className='upload_box_item'>
+
+
+                                                <Upload {...propsD} >
+                                                    <div className='upload_svg' onClick={() => setShowModal(true)}>
+                                                        <div className='up_box'><span>{updata?.filename_download || 'Add file'}</span><FolderOpenOutlined style={{ fontSize: '20px' }} />  </div>
+                                                    </div>
+                                                </Upload>
+
+                                            </div>
+                                        </Form.Item>
+                                    </Col>
+                                    <Col >
+                                        <Form.Item
+                                        >
+                                            <Button type="primary" htmlType="submit">
+                                                <div className='name'>Apply <div className='svg'></div></div>
+                                            </Button>
+                                        </Form.Item>
+                                    </Col>
+                                    
+                                    <Col >
+                                        <div >
+                                            <div className='to_website'>
+                                                <a  href={data.link} target="_blank">Or go to the recruitment website {'>'} </a>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Row>
+
+
+
+
+
+                            </Form>
+                        </div>
+                    </div>
                 </div>
 
-                <div>
+                {/* <div>
                     <Row className="careeropentable">
                         <Col sm={24} xl={12} >
                             <div className='upload_box'>
@@ -147,7 +276,7 @@ export default function CardOpportunities(props) {
                     </Row>
 
 
-                </div>
+                </div> */}
             </Modal >
             {/* <Modal open={showModal}  onCancel={()=>{setShowModal(false)}} footer={[]} width={720}>
                 <Dragger {...propsD}>

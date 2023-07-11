@@ -56,7 +56,7 @@ export default function HomePage() {
     const getInfo = async () => {
         let res = await Http.to.items("banner").readByQuery({
             sort: ['sort'],
-             filter: { status: "published" }
+            filter: { status: "published" }
         });
         setInfo(res.data[0] ?? {});
         let arr = [];
@@ -97,7 +97,7 @@ export default function HomePage() {
             fields: ['*'],
 
 
-            filter: { 'Homepage': 'true', status: "published" ,type: "Exhibition" }
+            filter: { 'Homepage': 'true', status: "published", type: "Exhibition" }
         });
         let res2 = await Http.to.items("New_Content").readByQuery({
             sort: ['id'],
@@ -105,14 +105,14 @@ export default function HomePage() {
             filter: { 'collection': 'Img', }
         });
         let newImg = res.data[0].Img;  // 先提取New集合img
-  let img;
-  if (!newImg) { // 如果newImg不存在
-    res.data[0].Content.forEach(item => {
-      img = res2.data.find(item2 => item2.id === item)?.item?.Img 
-    })
-  } else {
-    img = newImg;  // 否则,img赋值为newImg
-  }
+        let img;
+        if (!newImg) { // 如果newImg不存在
+            res.data[0].Content.forEach(item => {
+                img = res2.data.find(item2 => item2.id === item)?.item?.Img
+            })
+        } else {
+            img = newImg;  // 否则,img赋值为newImg
+        }
         setnewImg(img);
         setNewInfo(res.data?.[0]);
     }
@@ -188,7 +188,7 @@ export default function HomePage() {
                                 <div className='title_h1'>
                                     Exhibition
                                 </div>
-                                <Row justify={"center"}  className='newstable'>
+                                <Row justify={"center"} className='newstable'>
                                     <Col sm={24} xl={10} className='newstableleft' >
                                         <div className='infomation'>
                                             <div className='title'>
@@ -196,25 +196,25 @@ export default function HomePage() {
                                             </div>
                                             <div className='info' dangerouslySetInnerHTML={{ __html: newInfo?.Exhibition?.replace(/\n/g, "<br/>") }}>
                                             </div>
-                                            
-                                           <span 
-  className='readmore' 
-  onClick={() => {
-    if (newInfo?.outlink) {
-      const link = newInfo?.outlink.startsWith('http') ? newInfo?.outlink : `/#/${newInfo?.outlink}`;
-      window.open(link);
-    } else {
-      toPage('newsInfo/' + newInfo?.id + '/' + newInfo?.type)
-    }
-    window.scrollTo(0, 0);
-  }}
->
-  READ MORE <span></span>
-</span>
-                                            
+
+                                            <span
+                                                className='readmore'
+                                                onClick={() => {
+                                                    if (newInfo?.outlink) {
+                                                        const link = newInfo?.outlink.startsWith('http') ? newInfo?.outlink : `/#/${newInfo?.outlink}`;
+                                                        window.open(link);
+                                                    } else {
+                                                        toPage('newsInfo/' + newInfo?.id + '/' + newInfo?.type)
+                                                    }
+                                                    window.scrollTo(0, 0);
+                                                }}
+                                            >
+                                                READ MORE <span></span>
+                                            </span>
+
                                         </div>
                                     </Col>
-                                    <Col sm={24} xl={14}  className='newstableright'>
+                                    <Col sm={24} xl={14} className='newstableright'>
                                         <div className='img_info'>
 
                                             {newImg && <div className='img_pri' style={{ backgroundImage: `url(${ConstValue.url + "assets/" + newImg})` }}>
@@ -255,10 +255,10 @@ export default function HomePage() {
                                 </div>
                                 <div className={'info '} style={pFlag === 0 ? { height: '100px' } : {}}>
                                     <a style={{ color: '#6e6e6e' }} href="/#/products2/1" onClick={() => {
-    document.querySelector('#top').scrollIntoView({
-      block: 'center'
-    })
-  }}>100G/400G/800G/1.6T EML/TFLN/Sipho OSFP/QSFP-DD</a>
+                                        document.querySelector('#top').scrollIntoView({
+                                            block: 'center'
+                                        })
+                                    }}>100G/400G/800G/1.6T EML/TFLN/Sipho OSFP/QSFP-DD</a>
 
                                 </div>
                                 <div className={pFlag === 1 ? 'title' : 'titleb'} onClick={() => setpFlag(1)}>
@@ -266,20 +266,20 @@ export default function HomePage() {
                                 </div>
                                 <div className={'info '} style={pFlag === 1 ? { height: '100px' } : {}} >
                                     <a style={{ color: '#6e6e6e' }} href="/#/products2/2" onClick={() => {
-    document.querySelector('#top').scrollIntoView({
-      block: 'center'
-    })
-  }}>n-house Design &amp; Manufacture 100G/λ and 200G/λ Optical Engines with Cutting Edge OE Packaging Capabilities            </a>
+                                        document.querySelector('#top').scrollIntoView({
+                                            block: 'center'
+                                        })
+                                    }}>n-house Design &amp; Manufacture 100G/λ and 200G/λ Optical Engines with Cutting Edge OE Packaging Capabilities            </a>
                                 </div>
                                 <div className={pFlag === 2 ? 'title' : 'titleb'} onClick={() => setpFlag(2)}>
                                     NPO/CPO ELSFP & OE Connectivity<div className='svg_right' style={{ backgroundImage: `url(${svg1})` }}></div>
                                 </div>
                                 <div className={'info '} style={pFlag === 2 ? { height: '100px' } : {}} >
                                     <a style={{ color: '#6e6e6e' }} href="/#/products2/3" onClick={() => {
-    document.querySelector('#top').scrollIntoView({
-      block: 'center'
-    })
-  }}>1.6T/3.2T NPO/CPO Optical Engines Optical/Electrical Hybrid Packaging Platforms</a>
+                                        document.querySelector('#top').scrollIntoView({
+                                            block: 'center'
+                                        })
+                                    }}>1.6T/3.2T NPO/CPO Optical Engines Optical/Electrical Hybrid Packaging Platforms</a>
                                 </div>
                                 {/* <div className='info2'>
                                     Optical Engine<br />

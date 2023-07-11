@@ -64,12 +64,13 @@
         font-size: 14px;
         position: absolute;
         cursor: pointer;
-        right:24px;
+        right: 24px;
         bottom: 30px;
-        @media (max-width:450px){
+
+        @media (max-width:450px) {
             position: relative;
-            right:0;
-            bottom:0;
+            right: 0;
+            bottom: 0;
             margin-top: 10px;
         }
     }
@@ -119,12 +120,13 @@
         letter-spacing: 0px;
         text-align: left;
         width: 34rem;
-        height:8rem;
+        height: 8rem;
         margin-bottom: 1.5rem;
-        @media screen and (max-width: 1280px){
-           width: 28rem;  
+
+        @media screen and (max-width: 1280px) {
+            width: 28rem;
         }
-        
+
     }
 
     .infomation {
@@ -154,9 +156,10 @@
             }
         }
     }
-    @media screen and (max-width: 640px){
-              width: 100%;  
-            }
+
+    @media screen and (max-width: 640px) {
+        width: 100%;
+    }
 }
 
 .ant-modal-content {
@@ -177,7 +180,7 @@
         line-height: 1.3;
         letter-spacing: 0px;
         text-align: left;
-        
+
     }
 
     .infomation {
@@ -213,6 +216,7 @@
         overflow-y: auto;
         margin-top: 36px;
         margin-bottom: 36px;
+        border-bottom: 1px dashed #ccc;
 
         .info2_title {
             color: rgb(0, 0, 0);
@@ -236,6 +240,26 @@
             text-align: justify;
         }
     }
+
+    .info3 {
+        overflow-y: auto;
+        margin-top: 36px;
+        margin-bottom: 36px;
+
+        .info3_title {
+            color: rgb(0, 0, 0);
+            font-family: Noto Sans SC !important;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 21px;
+            letter-spacing: 0px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+
+    }
+
     .upload_box {
         width: 100%;
         height: 100%;
@@ -243,20 +267,25 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         &:hover {
             background-color: rgb(0, 61, 166);
-            .name{
-                color:#fff;
+
+            .name {
+                color: #fff;
             }
-            .svg2{
+
+            .svg2 {
                 filter: drop-shadow(16px 16px 20px red) invert(75%);
             }
-            .svg{
+
+            .svg {
                 filter: drop-shadow(16px 16px 20px red) invert(75%);
             }
 
         }
     }
+
     .name {
         cursor: pointer;
         color: rgb(142, 142, 142);
@@ -271,13 +300,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition:all 0.5s;
+        transition: all 0.5s;
+
         .svg {
             content: '';
             margin-left: 20px;
             width: 24.79px;
             height: 19px;
-            transition:all 0.5s;
+            transition: all 0.5s;
             background-image: url('../../static/svg/upload.svg');
             background-repeat: no-repeat;
 
@@ -292,55 +322,147 @@
             background-image: url('../../static/svg/Union.svg');
         }
 
-        &:hover{
-        background-color: rgb(0, 61, 166);
-        color: rgb(255, 255, 255);
-        .svg{
-        filter: drop-shadow(16px 16px 20px red) invert(75%);
+        &:hover {
+            background-color: rgb(0, 61, 166);
+            color: rgb(255, 255, 255);
+
+            .svg {
+                filter: drop-shadow(16px 16px 20px red) invert(75%);
+            }
         }
     }
-    }
 }
-.ant-modal-body{   
-    .careeropentable{
-        &>div{
+
+.ant-modal-body {
+    .careeropentable {
+        &>div {
             width: 100%;
         }
     }
-    .upload_svg{
-            display: flex; 
-            .namelink{
-    cursor: pointer;
-    color: rgb(142, 142, 142);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 16px;
-    letter-spacing: 0px;
-    text-align: left;
-    position: relative;
-    width: 100%;
-    background-color: rgb(214, 215, 225);
-    height: 64px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    transition:all 0.5s;
-    .svg{
-    content: "";
-    margin-left: 20px;
-    width: 20px;
-    height: 21px;
-    background-image: url('../../static/svg/Union.svg');
-    transition:all 0.5s;
-    }
-     &:hover{
-        background-color: rgb(0, 61, 166);
-        color: #fff;       
-        .svg{
-        filter: drop-shadow(16px 16px 20px red) invert(75%);
+
+    .to_website{
+        a{
+            color: #999999;
+        } 
+        &:hover a{
+            color: #3e3e3e;
+
         }
     }
+    .upload_svg{
+        width: 280px;
+
+    }
+    .upload_box_item{
+        width: 280px !important;
+        margin-right: 20px;
+        padding: 14px;
+        border-radius: 0;
+        background-color: #daedc5;
+        position: relative;
+        .up_box{
+           &>span:last-child{
+            position: absolute;
+            right: 20px;
+           }
+        }
+    }
+    .ant-input{
+        width: 300px !important;
+        padding: 14px;
+        margin-right: 20px;
+        border-radius: 0;
+        background-color: #f6f6f6;
+        position: relative;
+        
+    }
+    .ant-form-item-control-input-content{
+        position: relative;
+        &::after{
+            content: '*';
+            top: 0;
+            left: 25px;
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #ff0000;
+        }
+        .ant-btn{
+            position: relative;
+            height: 70px;
+            width: 600px;
+            background-color: #e4e4e4;
+            border-radius: 0;
+            z-index: 20;
+            padding: 0;
+        }
+    }
+
+    .ant-input::-webkit-input-placeholder {
+        color: rgb(0, 0, 0);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: left;
+    }
+    .ant-input:-moz-placeholder {
+        color: rgb(0, 0, 0);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: left;
+    }
+    .ant-input:-ms-input-placeholder {
+        color: rgb(0, 0, 0);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: left;
+    }
+    .upload_svg {
+        display: flex;
+
+        .namelink {
+            cursor: pointer;
+            color: rgb(142, 142, 142);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 16px;
+            letter-spacing: 0px;
+            text-align: left;
+            position: relative;
+            width: 100%;
+            background-color: rgb(214, 215, 225);
+            height: 64px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: all 0.5s;
+
+            .svg {
+                content: "";
+                margin-left: 20px;
+                width: 20px;
+                height: 21px;
+                background-image: url('../../static/svg/Union.svg');
+                transition: all 0.5s;
             }
+
+            &:hover {
+                background-color: rgb(0, 61, 166);
+                color: #fff;
+
+                .svg {
+                    filter: drop-shadow(16px 16px 20px red) invert(75%);
+                }
+            }
+        }
     }
 }

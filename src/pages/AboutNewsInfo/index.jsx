@@ -15,7 +15,7 @@ export default function AboutNewsInfo() {
         navigate('/' + address + '/' + info);
     }
     const toPage2 = (address, info) => {
-        navigate('/' + address );
+        navigate('/' + address);
     }
     const getParams = useParams();
     useEffect(() => {
@@ -30,7 +30,7 @@ export default function AboutNewsInfo() {
             filter: {
                 type
                     :
-                    getParams?.type,status:"published"
+                    getParams?.type, status: "published"
             }
         });
         let res2 = await Http.to.items("New_Content").readByQuery({
@@ -42,8 +42,8 @@ export default function AboutNewsInfo() {
             sort: ['id'],
             fields: ['*,item.*'],
             filter: { 'collection': 'Text', }
-        }); 
-        
+        });
+
 
         res.data.Content.forEach((item) => {
             res2?.data?.forEach((item2) => {
@@ -55,7 +55,7 @@ export default function AboutNewsInfo() {
             res3?.data?.forEach((item2) => {
                 if (item === item2.id
                 ) {
-                    
+
                     res.data.text1 = item2?.item?.Text;
                 }
             })
@@ -73,7 +73,7 @@ export default function AboutNewsInfo() {
     }
     return (
         <div className='about_news_info'>
-            <NavLink title1={'About'} link1={()=>{toPage2('about')}} title2={getParams?.type} link2={()=>{if(getParams?.type!=='Event'){toPage2(getParams?.type?.toLocaleLowerCase())}else{toPage2('events')}}} title3={info?.Title}/>
+            <NavLink title1={'About'} link1={() => { toPage2('about') }} title2={getParams?.type} link2={() => { if (getParams?.type !== 'Event') { toPage2(getParams?.type?.toLocaleLowerCase()) } else { toPage2('events') } }} title3={info?.Title} />
             <div className='title'>
                 <div className='title_box'>
                     {info?.date_created && <div className='time'>
@@ -91,16 +91,15 @@ export default function AboutNewsInfo() {
                 </div>
 
             </div>
-            <div 
-  className='contactfull' 
-  dangerouslySetInnerHTML={{ __html: (info?.contactfull) }} 
-/>
-           <div className='info' dangerouslySetInnerHTML={{ __html: info?.text1 }} />
+            <div
+                className='contactfull'
+                dangerouslySetInnerHTML={{ __html: (info?.contactfull) }}
+            />
+            <div className='info' dangerouslySetInnerHTML={{ __html: info?.text1 }} />
             <div className='img'>
                 <img src={ConstValue.url + "assets/" + info?.img} alt="" />
             </div>
         </div>
 
-        
     )
 }
