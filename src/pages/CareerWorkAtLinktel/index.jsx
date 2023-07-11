@@ -27,9 +27,8 @@ export default function CareerWorkAtLinktel() {
             sort: ['id'],
         });
         setInfo(res.data)
-        let arr1 = res.data?.content?.split('<script src="')?.[1]?.split('"');
-        setscriptdata(arr1?.[0]);
-        addExternalScript(arr1?.[0])
+            if(res?.data?.js===undefined)return
+        addExternalScript(ConstValue.url + "assets/" +res?.data?.js);
     }
 
     // 添加js文件
