@@ -6,11 +6,13 @@ import Http from "@/utils/http";
 
 export default function TopInfo(props) {
 	const { imgBg, title, info1, info2, styleSelf } = props;
+
     const [info, setInfo] = useState({})
     useEffect(() => {
         getNextM()
-    }, []);
+    }, [title]);
 	const getNextM = async () => {
+
         let res = await Http.to.items('menu_new').readByQuery({
             sort: ['id'],
         });
@@ -21,12 +23,14 @@ export default function TopInfo(props) {
 			}
 			item?.nextmenu.forEach((item2)=>{
 				if(item2.menu===title){
-					showdata=item;
+					showdata=item2;
 				}
 			})
 		})
         setInfo(showdata);
-		console.log(showdata);
+		console.log(res.data);
+		console.log(title);
+
     }
 	return (
 		<div className='top_info'>
