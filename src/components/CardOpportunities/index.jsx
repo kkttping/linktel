@@ -109,10 +109,7 @@ export default function CardOpportunities(props) {
                     <div className='type'>Place</div>
                     <div className='info'>{data?.Place}</div>
                 </div>
-                <div className='item'>
-                    <div className='type'>Hiring</div>
-                    <div className='info'>{data?.Hiring}</div>
-                </div>
+           
             </div>
             <span className='readmore' onClick={() => { setIsModalOpen(true) }}>READ MORE <span></span></span>
             <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={[]} width={720}>
@@ -130,10 +127,7 @@ export default function CardOpportunities(props) {
                             <div className='type'>Place</div>
                             <div className='info'>{data?.Place}</div>
                         </div>
-                        <div className='item'>
-                            <div className='type'>Hiring</div>
-                            <div className='info'>{data?.Hiring}</div>
-                        </div>
+                        
                     </div>
                     <div className='info2' >
                         <div className='info2_title'>Requirements</div>
@@ -224,7 +218,7 @@ export default function CardOpportunities(props) {
                                     <Col >
                                         <Form.Item
                                         >
-                                            <Button type="primary" htmlType="submit">
+                                            <Button type="primary" htmlType="submit" className='opp_apply' >
                                                 <div className='name'>Apply <div className='svg'></div></div>
                                             </Button>
                                         </Form.Item>

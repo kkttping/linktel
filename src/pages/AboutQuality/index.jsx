@@ -3,7 +3,6 @@ import imgBg from '@/static/img/aq_bg1.jpg'
 import NavLink from '@/components/NavLink'
 import AboutNav from '@/components/AboutNav'
 import imgItem1 from '@/static/img/aq_item1.jpg'
-import imgItem2 from '@/static/img/aq_item2.jpg'
 
 import { Menu, Row, Col } from 'antd'
 import React, { useEffect, useState } from 'react'
@@ -15,33 +14,54 @@ import { useNavigate } from "react-router-dom";
 import './index.scss'
 export default function AboutQuality() {
     const [quality, setQuality] = useState([]);
+    const [info, setInfo] = useState({});
+    const [scriptdata, setscriptdata] = useState('');
     const navigate = useNavigate()
     const toPage = (address, routerName) => {
         navigate('/' +address);
     }
-    useEffect(() => {
+        useEffect(() => {
         getInfo();
-    }, []);
-
-    const getInfo = async () => {
+        }, []);
+        useEffect(() => {
+        getInfo2();
+        }, []);
+ 
+        const getInfo = async () => {
         let res = await Http.to.items("Certificate").readByQuery({
             sort: ['sort'],
             filter: { 'status': 'published', }
         });
         setQuality(res.data)
+    }   
+        const getInfo2 = async () => {
+        let res = await Http.to.items("Quality").readByQuery({
+            sort: ['id'],
+        });
+        setInfo(res.data)
+            if(res?.data?.js===undefined)return
+        addExternalScript(ConstValue.url + "assets/" +res?.data?.js);
     }
+
+    // 添加js文件
+    function addExternalScript(src) {
+        if(src===undefined)return
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = () => resolve();
+            script.onerror = () => reject();
+            document.body.appendChild(script);
+        });
+    }
+
     return (
         <div className='about_quality'>
             <TopInfo imgBg={imgBg} title={'Quality'} styleSelf={{ bgColor: '#000' }} info1={'LINK TO THE UNKNOWN'} info2={' '} />
             <NavLink title1={'About'} link1={()=>{toPage('about')}} title2={'Quality'}/>
             <AboutNav />
-            <div className='content'>
-             <div className='quality_top'>   <p1>
-           We believe that quality is an indispensable part in an enterprise's operations. At Linktel, quality is essential to our customers, our shareholders, our company, and our future.
-        </p1> </div>
-                <div className='img_top'>
-                    <img src={imgItem1} alt="" />
-                </div>
+            <div className='content' dangerouslySetInnerHTML={{ __html: info?.content }}></div>
+            <div className='content'>                 
                 <div className='imgList'>
                     <Row justify={'center'}>
                         {quality.map((item, index) => {

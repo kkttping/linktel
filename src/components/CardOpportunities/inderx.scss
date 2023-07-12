@@ -1,4 +1,5 @@
 .card_opportunities {
+    
     .readmore{
     &:hover{
          color: #fff;
@@ -296,7 +297,7 @@
         text-align: left;
         position: relative;
         width: 100%;
-        height: 64px;
+        height: 70px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -345,7 +346,7 @@
             color: #999999;
         } 
         &:hover a{
-            color: #3e3e3e;
+            color: rgb(0, 61, 166);
 
         }
     }
@@ -354,23 +355,30 @@
 
     }
     .upload_box_item{
-        width: 280px !important;
-        margin-right: 20px;
+        width: 272px !important;
+        margin-right: 5px;
+        margin-left: 5px;
         padding: 14px;
         border-radius: 0;
         background-color: #daedc5;
         position: relative;
+        transition: all 0.5s;
+        &:hover{
+            background-color: #bdcee9; 
+        }
         .up_box{
            &>span:last-child{
             position: absolute;
             right: 20px;
            }
         }
+        
     }
     .ant-input{
         width: 300px !important;
         padding: 14px;
-        margin-right: 20px;
+        margin-right: 5px;
+        margin-left: 5px;
         border-radius: 0;
         background-color: #f6f6f6;
         position: relative;
@@ -381,7 +389,7 @@
         &::after{
             content: '*';
             top: 0;
-            left: 25px;
+            left: 12px;
             display: block;
             width: 20px;
             height: 20px;
@@ -393,7 +401,9 @@
         .ant-btn{
             position: relative;
             height: 70px;
-            width: 600px;
+            max-width: 610px;
+            width: 64vw;
+            box-shadow:none;
             background-color: #e4e4e4;
             border-radius: 0;
             z-index: 20;
@@ -464,5 +474,9 @@
                 }
             }
         }
+    }
+    .form{
+        padding: 1rem;
+        background-color: rgb(242, 244, 247);
     }
 }

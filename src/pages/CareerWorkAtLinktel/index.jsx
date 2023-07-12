@@ -1,8 +1,5 @@
 import TopInfo from '@/components/TopInfo'
 import imgBg from '@/static/img/c2_bg1.jpg'
-import imgitem from '@/static/img/c3_item1.jpg'
-import imgitem2 from '@/static/img/c3_item2.jpg'
-
 import NavLink from '@/components/NavLink'
 import CareerNav from '@/components/CareerNav'
 import { Menu, Row, Col } from 'antd'

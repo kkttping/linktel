@@ -4,7 +4,6 @@ import NavLink from '@/components/NavLink'
 import AboutNav from '@/components/AboutNav'
 import CardCulture from '@/components/CardCulture'
 import { Menu, Row, Col } from 'antd'
-import imgItem3 from '@/static/img/acu_item3.jpg'
 import React, { useState, useEffect } from 'react'
 import Http from "@/utils/http";
 import ConstValue from "@/utils/value";
@@ -29,7 +28,7 @@ export default function AboutCulture() {
     }
     return (
         <div className='about_culture'>
-            <TopInfo imgBg={imgBg} title={'Culture '} styleSelf={{ bgColor: '#000' }} info1={'LINK TO THE UNKNOWN'} info2={' '} />
+            <TopInfo imgBg={imgBg} title={'Culture'} styleSelf={{ bgColor: '#000' }} info1={'LINK TO THE UNKNOWN'} info2={' '} />
             <NavLink title1={'About'} link1={()=>{toPage('about')}} title2={'Culture'}/>
             <AboutNav />
             <Row justify={'center'}>

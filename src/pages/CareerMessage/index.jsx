@@ -1,7 +1,5 @@
 import TopInfo from "@/components/TopInfo";
 import imgBg from "@/static/img/c2_bg1.jpg";
-import imgitem from "@/static/img/c2_item1.jpg";
-import imgitem2 from "@/static/img/c2_item2.jpg";
 import NavLink from "@/components/NavLink";
 import CareerNav from "@/components/CareerNav";
 import { useNavigate } from "react-router-dom";
@@ -30,7 +28,7 @@ export default function CareerMessage() {
     <div className="career_message">
       <TopInfo
         imgBg={imgBg}
-        title={"General Manager Speech"}
+        title={"message"}
         info1={"LINK TO THE UNKNOWN"}
         info2={" "}
       />

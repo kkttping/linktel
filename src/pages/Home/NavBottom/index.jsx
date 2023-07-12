@@ -46,7 +46,13 @@ export default function NavBottom(porps) {
 
                     return (
                         <div className='item' key={index} >
-                            <div className='img' dangerouslySetInnerHTML={{ __html: item?.img }}></div>
+                            <div className='img' onClick={() => {
+  if (!item?.link.includes('http')) {
+    toPage(item?.link);
+  } else {
+    window.open(item?.link);
+  } 
+}} dangerouslySetInnerHTML={{ __html: item?.img }} ></div>
                             <div className='title' onClick={() => {
   if (!item?.link.includes('http')) {
     toPage(item?.link);

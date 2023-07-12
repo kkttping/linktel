@@ -28,7 +28,7 @@ export default function CareerNav() {
                     <Col xs={24} md={22} xl={16} xxl={12}>
                         <Menu onClick={menuonClick} mode="horizontal" selectedKeys={[nav]} >
                             <Menu.Item key="message" >
-                                <span>GM Speech</span>
+                                <span>Words from General Message</span>
                             </Menu.Item>
                             <Menu.Item key="workAtLinktel" >
                                 <span>Work At Linktel</span>

@@ -2,13 +2,9 @@ import TopInfo from '@/components/TopInfo'
 import imgBg from '@/static/img/ac_bg1.jpg'
 import NavLink from '@/components/NavLink'
 import AboutNav from '@/components/AboutNav'
-import imgBg2 from '@/static/img/ac_bg2.jpg'
-import imgItem from '@/static/img/ac_item1.jpg'
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from 'react'
 import Http from "@/utils/http";
-import ConstValue from "@/utils/value";
-
 import './index.scss'
 export default function AboutCompany() {
     const navigate = useNavigate()

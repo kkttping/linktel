@@ -18,11 +18,11 @@ export default function TopInfo(props) {
         });
 		let showdata={};
 		res.data?.nextmenu.forEach((item)=>{
-			if(item.menu===title){
+			if(item.title===title){
 				showdata=item;
 			}
 			item?.nextmenu.forEach((item2)=>{
-				if(item2.menu===title){
+				if(item2.title===title){
 					showdata=item2;
 				}
 			})
@@ -45,7 +45,15 @@ export default function TopInfo(props) {
 						}}
 					>
 						<span className='titel'>
-							<Texty interval={150} delay={500}>{info?.menu}</Texty>
+							<Texty interval={150} delay={500}>
+{
+  info?.titletop 
+    ? info.titletop.replace(/\s/g, (match) => {
+      return String.fromCharCode(160);
+    })
+    : ''
+}
+</Texty>
 						</span>
 						<span>
 							<Texty type="swing">{info?.info1}</Texty>
