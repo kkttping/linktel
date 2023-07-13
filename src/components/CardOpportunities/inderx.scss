@@ -72,7 +72,7 @@
             position: relative;
             right: 0;
             bottom: 0;
-            margin-top: 10px;
+            margin-top: 20px;
         }
     }
 
@@ -351,11 +351,12 @@
         }
     }
     .upload_svg{
-        width: 280px;
+        
 
     }
     .upload_box_item{
-        width: 272px !important;
+        width: 64vw !important;
+        max-width: 300px;
         margin-right: 5px;
         margin-left: 5px;
         padding: 14px;
@@ -363,6 +364,8 @@
         background-color: #daedc5;
         position: relative;
         transition: all 0.5s;
+        box-sizing:border-box;
+        margin-bottom: -10px;
         &:hover{
             background-color: #bdcee9; 
         }
@@ -375,13 +378,16 @@
         
     }
     .ant-input{
-        width: 300px !important;
+        width: 64vw !important;
+         max-width: 300px;
+         margin-right: 5px;
+         margin-left: 5px;
         padding: 14px;
-        margin-right: 5px;
-        margin-left: 5px;
         border-radius: 0;
         background-color: #f6f6f6;
         position: relative;
+        box-sizing:border-box;
+        margin-bottom: -10px;
         
     }
     .ant-form-item-control-input-content{

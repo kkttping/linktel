@@ -8,18 +8,19 @@
         background-color: rgb(184, 210, 255, 0.1);
         width: 100%;
         min-height: 180px;
-        font-size: 40px;
+        font-size: 2rem;
         font-weight: 700;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 10px;
+        padding: 2rem;
+        box-sizing: border-box;
     }
 
     .info {
-        padding: 10px;
-        margin: 70px auto;
-        max-width: 720px;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 900px;
         color: rgb(85, 85, 85, 0.8);
         font-size: 14px;
         font-weight: 400;
@@ -32,13 +33,12 @@
 
 
         width: 100%;
-        height: 588px;
         display: flex;
         justify-content: center;
         margin-bottom: 188px;
+        max-width: 100vw;
         img {
-            height: 100%;
-            max-width: 1200px;
+            max-width: 100vw;
             object-fit: cover;
             
         }

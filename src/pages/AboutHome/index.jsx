@@ -125,19 +125,8 @@ export default function AboutHome() {
                     <Row justify={"center"}>
                         <Col sm={24} xl={12}  >
                             <Row>
-                                <Col xs={24} lg={12} xl={12} >
-                                    <div className='card_item' style={{width:'25vw'}}>
-                                        <CardProducts 
-  link={() => window.open('https://quote.eastmoney.com/SZ301205.html')} 
-  img={imgitem6} 
-  styleSelf={{ color: '#fff', objectfit: 'cover' }} 
-  titleout={'Investors'} 
-  titleIn={'Investors'} 
-  info={[' Linktel went IPO at Shenzhen Stock Exchange Market on Sep 13, 2022, and will open a new chapter to go for the future growth. ']} >
-      </CardProducts>
-                                    </div>
-                                </Col>
-                                <Col xs={24} lg={12} xl={12} >
+                               
+                                <Col xs={24} lg={12} xl={12} className='card_about_News'>
                                     <div className='card_item card_newsnew' >
                                         {news && (
                                             <div className='news' >
@@ -165,14 +154,15 @@ export default function AboutHome() {
 
                                     </div>
                                 </Col>
-                            </Row>
-                        </Col>
-
-                        <Col sm={24} xl={12} >
+                                 <Col sm={24} xl={12}   className='card_about_quality' >
                             <div className='card_item'>
                                 <CardProducts link={() => { toPage('quality', 'about'); window.scrollTo(0, 0); }} img={imgitem7} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Quality'} titleIn={'Quality'} info={['Linktel, ISO9001 and ISO14001 certified, has well-established quality control system and MES production execution system in place to ensure product quality stable, consistent and reliable. ']}></CardProducts>
                             </div>
                         </Col>
+                            </Row>
+                        </Col>
+
+                       
                     </Row>
                 </div>
 

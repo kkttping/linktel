@@ -75,6 +75,11 @@
       .img_box {
         overflow: hidden;
         position: relative;
+        .img_video{
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
 
         .img_bg {
           height: calc(100vh - 0px);

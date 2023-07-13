@@ -131,13 +131,12 @@ export default function HomePage() {
                             infoList.map((item, index) => {
                                 return (
                                     <div key={index} className='img_box' >
-                                        {(item?.video !== null) ?
-                                            (activtyKey === index && item?.video && <video className='img_bg'
-                                                loop autoPlay={true} muted src={ConstValue.url + "assets/" + item?.video}>
-                                            </video>)
-                                            : (activtyKey === index && item?.img && <div className='img_bg' style={{ backgroundImage: `url(${ConstValue.url + "assets/" + item?.img})` }}>
+                                          {(item?.img) && <div className='img_bg' style={{ backgroundImage: `url(${ConstValue.url + "assets/" + item?.img})` }}>
                                                 {item?.icon && <div className='text1' style={{ backgroundImage: `url(${ConstValue.url + "assets/" + item?.icon})` }}></div>}
-                                            </div>)}
+                                            </div>}
+                                            {(item?.video) && <video className='img_bg img_video'
+                                                loop autoPlay={true} muted src={ConstValue.url + "assets/" + item?.video}>
+                                            </video>}
 
                                         <div className='botom_mask2'>
                                             {

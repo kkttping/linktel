@@ -30,6 +30,11 @@
                 height: 12px;
                 width: 12px;
                 cursor: pointer;
+                background-repeat: no-repeat;
+                background-position: center;
+                @media (max-width:640px){
+                     width: 24px;
+                }
             }
             
 

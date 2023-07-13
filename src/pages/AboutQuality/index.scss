@@ -5,6 +5,7 @@
         height: 400px;
     }
     .content{
+        padding: 2rem;
          .quality_top{  
       display: flex;
       line-height: 1.2;  
@@ -33,17 +34,22 @@
 
         }
         .imgList{
+            .ant-row{
+              gap:1rem;  
+            }         
             .img_box{
-                width: 320px;
-                height: 360px;
                 background-color: rgb(196, 196, 196,0.1);
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
                 align-items: center;
-                margin: 40px;
+                width: 22vw;
+                max-width: 400px;
+                height: 28vw;
+                max-height: 480px;
                 img{
-                    height: 203px;
+                    width: 16vw;
+                    max-width: 160px;
                 }
             }
         }

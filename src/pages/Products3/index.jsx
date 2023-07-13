@@ -44,56 +44,68 @@ export default function Products3() {
             title: 'Form Factor',
             dataIndex: 'form_factor',
             key: '2',
-            width: 79,
+            width: 70,
+        },
+        {
+            title: 'Power',
+            dataIndex: 'Power',
+            key: '3',
+            width: 64,
+        },
+        {
+            title: 'Channel',
+            dataIndex: 'Channel',
+            key: '4',
+            width: 64,
         },
         {
             title: 'Data Rate',
             dataIndex: 'data_rate',
-            key: '3',
-            width: 79,
+            key: '5',
+            width: 70,
         },
         {
             title: 'Reach',
             dataIndex: 'reach',
-            key: '4',
-            width: 79,
+            key: '6',
+            width: 70,
         },
         {
             title: 'Wavelength',
             dataIndex: 'wavelength',
-            key: '5',
+            key: '7',
             width: 79,
         },
         {
             title: 'Transmitter',
             dataIndex: 'transmitter',
-            key: '6',
+            key: '8',
             width: 79,
         },
         {
             title: 'Receiver',
             dataIndex: 'receiver',
-            key: '7',
+            key: '9',
             width: 79,
         },
         {
             title: 'Interface',
             dataIndex: 'interface',
-            key: '8',
+            key: '10',
             width: 79,
 
         },
         {
             title: 'Temperature',
             dataIndex: 'temperature',
-            key: '9',
+            key: '11',
             width: 79,
 
         },
         {
             title: 'Application',
             dataIndex: 'application',
-            key: '10',
+            key: '12',
             width: 79,
 
         },
@@ -101,7 +113,7 @@ export default function Products3() {
             title: 'download',
             key: 'operation',
             fixed: 'right',
-            width: 59,
+            width: 64,
             render: (e, t, index) => { return (e.part_no && (!flag[index]) ? ((!flag2[index])?(<div className='download'><a onClick={(item) => { download(e, 'data', index) }} ><CloudDownloadOutlined /></a> </div>):<div className='svg_load'></div>):<div className='download'><Button  disabled type="link"><CloudDownloadOutlined style={{fontSize:'20px'}}/></Button></div> ) }
         },
     ];
@@ -200,6 +212,10 @@ export default function Products3() {
     }
 
     const getInfo2 = async (ids) => {
+         if(ids.length===0){
+            setInfo2([])
+            return;
+        }
         let res3 = await Http.to.items("product_specifications").readByQuery({
             sort: ['id'],
             filter: { '_or': ids.map(item => { return { 'id': item } }) }

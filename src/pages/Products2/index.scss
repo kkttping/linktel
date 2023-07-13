@@ -166,7 +166,7 @@
                      //最多展示两行
                         display: -webkit-box;
                         -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 3;
+                        -webkit-line-clamp: 2;
                          @media screen and (max-width: 640px) {
                         margin-bottom: 1rem;
             }
@@ -229,7 +229,7 @@
         padding: 20px;
         } 
          @media (max-width: 750px){
-         max-width: 90%; 
+         max-width: 100%; 
         } 
       } 
       >div:last-child {
