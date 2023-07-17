@@ -122,8 +122,8 @@ export default function AboutHome() {
 
                 </div>
                 <div style={{width:'100vw'}}>
-                    <Row justify={"center"}>
-                        <Col sm={24} xl={12}  >
+                    <Row justify={"center"} >
+                        <Col sm={24} xl={12}  className='about_card_newquality' >
                             <Row>
                                
                                 <Col xs={24} lg={12} xl={12} className='card_about_News'>

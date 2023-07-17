@@ -1,4 +1,7 @@
 .about_home {
+  .content{.about_card_newquality{
+  max-width: 100vw;
+  }}
   .card_item {
     background-color: #000;
     height: 560px;
@@ -52,6 +55,9 @@
   .leadership {
     width: 100%;
     position: relative;
+    >.ant-row{
+    align-items: flex-end;
+    }
 
     .human_img {
       height: 90vh;
@@ -383,6 +389,12 @@ span{
 }
 }
 .leadership{
+    >.ant-row{
+    align-items: flex-end;
+    .ant-col{
+    width: 100%;
+    }
+    }
   .readmore {
     color:#000;
   border-bottom: 1px solid #000;
