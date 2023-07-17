@@ -106,9 +106,6 @@ html {
   max-width: 50% !important;
   height:35vw !important;
 }
-  .about_home .img img{
-  height:35vw !important;  
-}
 }
 @media (max-width:640px){
   .card_two .ant-col-sm-24{

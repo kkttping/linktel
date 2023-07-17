@@ -250,7 +250,7 @@ export default function HomePage() {
                         <Col sm={24} xl={24} xxl={12} >
                             <div className='infomation'>
                                 <div className={pFlag === 0 ? 'title' : 'titleb'} onClick={() => setpFlag(0)}>
-                                    Pluggable Transceiver <div className='svg_right' style={{ backgroundImage: `url(${svg1})` }}></div>
+                                    Pluggable Transceiver 
                                 </div>
                                 <div className={'info '} style={pFlag === 0 ? { height: '100px' } : {}}>
                                     <a style={{ color: '#6e6e6e' }} href="/#/products2/1" onClick={() => {
@@ -261,7 +261,7 @@ export default function HomePage() {
 
                                 </div>
                                 <div className={pFlag === 1 ? 'title' : 'titleb'} onClick={() => setpFlag(1)}>
-                                    Optical Engine<div className='svg_right' style={{ backgroundImage: `url(${svg1})` }}></div>
+                                    Optical Engine
                                 </div>
                                 <div className={'info '} style={pFlag === 1 ? { height: '100px' } : {}} >
                                     <a style={{ color: '#6e6e6e' }} href="/#/products2/2" onClick={() => {
@@ -271,7 +271,7 @@ export default function HomePage() {
                                     }}>n-house Design &amp; Manufacture 100G/λ and 200G/λ Optical Engines with Cutting Edge OE Packaging Capabilities            </a>
                                 </div>
                                 <div className={pFlag === 2 ? 'title' : 'titleb'} onClick={() => setpFlag(2)}>
-                                    NPO/CPO ELSFP & OE Connectivity<div className='svg_right' style={{ backgroundImage: `url(${svg1})` }}></div>
+                                    NPO/CPO ELSFP & OE Connectivity
                                 </div>
                                 <div className={'info '} style={pFlag === 2 ? { height: '100px' } : {}} >
                                     <a style={{ color: '#6e6e6e' }} href="/#/products2/3" onClick={() => {
