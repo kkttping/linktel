@@ -219,9 +219,9 @@ export default function HomePage() {
                                             {newImg && <div className='img_pri' style={{ backgroundImage: `url(${ConstValue.url + "assets/" + newImg})` }}>
 
                                                 <div className='time'>
-                                                    <span >{(new Date(newInfo?.date_created)).getFullYear()}<br /></span>
-                                                    <span>{timeSet((new Date(newInfo?.date_created)).getMonth())}-{timeSet((new Date(newInfo?.date_created)).getDay())}</span>
-                                                </div>
+    <span>{(new Date(newInfo?.date_updated)).getFullYear()}<br /></span>
+    <span>{timeSet((new Date(newInfo?.date_updated)).getMonth() + 1)}-{timeSet((new Date(newInfo?.date_updated)).getDate())}</span>
+</div>
 
                                             </div>}
                                         </div>
@@ -297,7 +297,7 @@ export default function HomePage() {
                     </div>
                     <Row justify={'center'}>
                         <Col>
-                            <Row justify={'center'}>
+                            <Row justify={'center'} className='homelogoul' >
                                 <Col>
                                     <div className='link_img' style={{ backgroundImage: `url(${img_item2})` }}></div>
                                 </Col>
@@ -305,10 +305,6 @@ export default function HomePage() {
                                     <div className='link_img' style={{ backgroundImage: `url(${img_item3})` }}></div>
 
                                 </Col>
-                            </Row>
-                        </Col>
-                        <Col>
-                            <Row justify={'center'}>
                                 <Col>
                                     <div className='link_img' style={{ backgroundImage: `url(${img_item4})` }}></div>
 
@@ -319,6 +315,7 @@ export default function HomePage() {
                                 </Col>
                             </Row>
                         </Col>
+                        
                     </Row>
                 </div>
             </div>

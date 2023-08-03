@@ -27,7 +27,7 @@ export default function AboutNewsEvents() {
 
     const getInfo = async (url) => {
         let res = await Http.to.items(url).readByQuery({
-  sort: ['-sort', 'date_updated'],
+  sort: ['-sort', '-date_updated'],
   filter: {
     type: "Event", 
     status: "published"
@@ -75,7 +75,7 @@ setInfo(arr);
           return toPage('newsInfo', item.id+'/'+item.type);
         }
       }}
-      time={[`${timeSet((new Date(item?.date_created)).getMonth())}-${timeSet((new Date(item?.date_created)).getDay())}`, (new Date(item?.date_created)).getFullYear()]}
+      time={[`${timeSet((new Date(item?.date_updated)).getMonth()+1)}-${timeSet((new Date(item?.date_updated)).getDate())}`, (new Date(item?.date_updated)).getFullYear()]}
       title={item?.Title}
       infoList={[item?.Preview]}
       img={ConstValue.url + "assets/" + item?.Img}
