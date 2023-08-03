@@ -1,4 +1,17 @@
 .home_page {
+  .homelogoul{
+    flex-wrap: nowrap;
+    >div{
+      width:100%;
+      text-align: center;
+    }
+    @media (max-width:900px){
+      flex-wrap: wrap;
+       >div{
+      width:45%;
+    }
+    }
+  }
   .newstable{
     display: flex;
     flex-flow: row wrap;
@@ -616,7 +629,7 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
-        margin: 20px 0;
+        margin: 20px auto;
         @media screen and (max-width: 640px) {
           width: 45vw;
           height: 45px;

@@ -28,7 +28,7 @@ const toPage = (address, info) => {
 
     const getInfo = async (url) => {
         let res = await Http.to.items(url).readByQuery({
-            sort: ['-sort', 'date_updated'],
+            sort: ['-sort', '-date_updated'],
             filter: {
                 type
                     :

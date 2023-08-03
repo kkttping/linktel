@@ -131,7 +131,7 @@ export default function AboutHome() {
                                         {news && (
                                             <div className='news' >
                                                 <div className='news_title'>News</div>
-                                                <div className='time'>{[`${timeSet((new Date(news?.date_created)).getMonth())}-${timeSet((new Date(news?.date_created)).getDay())}`, ',', (new Date(news?.date_created)).getFullYear()]}</div>
+                                                <div className='time'>{[`${timeSet((new Date(news?.date_updated)).getMonth()+1)}-${timeSet((new Date(news?.date_updated)).getDate())}`, ',', (new Date(news?.date_updated)).getFullYear()]}</div>
                                                 <div className='news_info'>{news
                                                     .Title
                                                 }</div>

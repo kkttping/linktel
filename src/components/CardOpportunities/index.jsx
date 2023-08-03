@@ -102,11 +102,11 @@ export default function CardOpportunities(props) {
 
             <div className='infomation'>
                 <div className='item'>
-                    <div className='type'>country</div>
+                    <div className='type'>Country</div>
                     <div className='info'>{data?.country}</div>
                 </div>
                 <div className='item'>
-                    <div className='type'>Place</div>
+                    <div className='type'>City</div>
                     <div className='info'>{data?.Place}</div>
                 </div>
            
@@ -115,31 +115,27 @@ export default function CardOpportunities(props) {
             <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={[]} width={720}>
                 <div className='content'>
                     <div>
-                        <div className="title">Hardware development engineer</div>
+                        <div className="title">{data?.position}</div>
                     </div>
 
                     <div className='infomation'>
                         <div className='item'>
-                            <div className='type'>country</div>
+                            <div className='type'>Country</div>
                             <div className='info'>{data?.country}</div>
                         </div>
                         <div className='item'>
-                            <div className='type'>Place</div>
+                            <div className='type'>City</div>
                             <div className='info'>{data?.Place}</div>
                         </div>
                         
                     </div>
-                    <div className='info2' >
-                        <div className='info2_title'>Requirements</div>
-                        <div className='info2_text'>
-                            {data?.Requirements}
-                        </div>
-                        <div className='info2_title'>Responsibility</div>
-                        <div className='info2_text'>
-                            {data?.Responsibility}
-                        </div>
+                    <div className='info2'>
+  <div className='info2_title'>Requirements</div>
+  <div className='info2_text' dangerouslySetInnerHTML={{ __html: data?.Requirements }}></div>
+  <div className='info2_title'>Responsibility</div>
+  <div className='info2_text' dangerouslySetInnerHTML={{ __html: data?.Responsibility }}></div>
+</div>
 
-                    </div>
                     <div className='info3'>
                         <div className='info3_title'>Online delivery:</div>
                         <div className='form'>

@@ -22,7 +22,7 @@ export default function CareerOpportunities() {
 
     const getInfo = async () => {
         let res = await Http.to.items("recruit").readByQuery({
-            sort: ['-sort', 'date_updated'],
+            sort: ['-sort', '-date_updated'],
             filter: { 'status': 'published', }
         });
         setInfo(res.data)
