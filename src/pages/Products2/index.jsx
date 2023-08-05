@@ -44,7 +44,7 @@ export default function Products2() {
     const getInfo2 = async () => {
         let res = await Http.to.items("product_category").readByQuery({
             fields: ['*'],
-            filter:{superior:getParams?.id+""}
+            filter:{superior:getParams?.id+"",status:"published"}
         });
         setInfo2(res.data);
         if (getParams?.itemId) {
@@ -87,7 +87,9 @@ export default function Products2() {
             <NavLink title1={'Products'} link1={() => { toPage('products') }} title2={navInfo[getParams?.id]} />
 
             <div className="info">
-                <div className='infoma' dangerouslySetInnerHTML={{ __html: info?.text }}></div>
+            {info?.text && (
+  <div className='infoma' dangerouslySetInnerHTML={{ __html: info.text }}></div>
+)}
                 {/* <div className='title'>
                     Linktel’s family of 800G transceivers accelerate data connectivity for data center Interconnection and Metro Networks. Our complete product line includes OSFP 2xFR4，OSFP 2xLR4，QSFP-DD DR8，QSFP-DD DR8+
                 </div>
