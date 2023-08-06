@@ -10,7 +10,7 @@ import {
 } from '@ant-design/icons';
 import ConstValue from "@/utils/value";
 import { useNavigate } from "react-router-dom";
-import { get, post } from '@/requests'
+import { get, post } from '@/requests';
 
 export default function Products3() {
     const [activtyKey, setActivtyKey] = useState(0);
@@ -39,12 +39,6 @@ export default function Products3() {
             dataIndex: 'part_no',
             key: '1',
             width: 79,
-        },
-        {
-            title: 'Form Factor',
-            dataIndex: 'form_factor',
-            key: '2',
-            width: 70,
         },
         {
             title: 'Power',
@@ -234,11 +228,31 @@ export default function Products3() {
 
         setInfo2(res3.data)
     }
+    // 创建一个新的数据源，用于存储清理后的数据
+    const cleanedDataSource = info2.map((data) => ({ ...data }));
+    
+    // 遍历每一列，除了最后一列
+    for (let i = columns.length - 2; i >= 0; i--) {
+      const column = columns[i];
+      const dataIndex = column.dataIndex;
+    
+      // 检查该列的所有数据是否都为空
+      const allEmpty = cleanedDataSource.every((data) => !data[dataIndex]);
+    
+      // 如果某列的所有数据都为空，将该列从列定义(columns)中删除
+      if (allEmpty) {
+        columns.splice(i, 1);
+    
+        // 同时，将数据源(cleanedDataSource)中对应列的数据也删除
+        cleanedDataSource.forEach((data) => delete data[dataIndex]);
+      }
+    }    
+      
     const navInfo = {
         '1': 'Pluggable Transceiver',
         '2': 'Optical Engine',
         '3': 'NPO/CPO ELSFP & OE Connectivity'
-    }
+    }      
     return (
         <div className='products3'>
             {contextHolder}
@@ -315,9 +329,10 @@ export default function Products3() {
                         <div className='table'>
                             <div className='table_content'>
                                 <div className="title">SPECIFICATIONS</div>
-                                <Table
+                                <Table 
+                                    id="myTable" 
                                     columns={columns}
-                                    dataSource={info2}
+                                    dataSource={cleanedDataSource}
                                     scroll={{ x: 1200 }}
                                     pagination={{ position: ['bottomCenter'], pageSize: 10, hideOnSinglePage: true }}
                                 />
@@ -327,5 +342,5 @@ export default function Products3() {
 
             </div>
         </div>
-    )
+    );
 }
