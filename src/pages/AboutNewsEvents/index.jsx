@@ -5,7 +5,6 @@ import NavLink from '@/components/NavLink'
 import NewsNav from '@/components/NewsNav'
 import AboutNav from '@/components/AboutNav'
 import CardNews2 from '@/components/CardNews2'
-import imgBg1 from '@/static/img/an_item3.jpg'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import './index.scss'
 import Http from "@/utils/http";
