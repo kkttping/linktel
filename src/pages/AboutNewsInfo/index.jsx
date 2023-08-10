@@ -98,10 +98,10 @@ export default function AboutNewsInfo() {
                 dangerouslySetInnerHTML={{ __html: (info?.contactfull) }}
             />
 )}
-            <div className='info' dangerouslySetInnerHTML={{ __html: info?.text1 }} />
-            <div className='img'>
+           {info?.text1 && (  <div className='info' dangerouslySetInnerHTML={{ __html: info?.text1 }} />)}
+          {info?.img && (   <div className='img'>
                 <img src={ConstValue.url + "assets/" + info?.img} alt="" />
-            </div>
+            </div>)}
         </div>
 
     )

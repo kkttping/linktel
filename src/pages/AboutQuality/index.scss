@@ -34,6 +34,8 @@
 
         }
         .imgList{
+            max-width: 1400px;
+            margin: 0 auto;
             .ant-row{
               gap:1rem;  
             }         
@@ -44,8 +46,8 @@
                 flex-direction: column;
                 align-items: center;
                 width: 22vw;
-                max-width: 400px;
-                height: 28vw;
+                max-width: 320px;
+                height: 25vw;
                 max-height: 480px;
                 img{
                     width: 16vw;

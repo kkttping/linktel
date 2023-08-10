@@ -274,7 +274,7 @@ export default function HomePage() {
                                         document.querySelector('#top').scrollIntoView({
                                             block: 'center'
                                         })
-                                    }}>n-house Design &amp; Manufacture 100G/λ and 200G/λ Optical Engines with Cutting Edge OE Packaging Capabilities            </a>
+                                    }}>In-house Design &amp; Manufacture 100G/λ and 200G/λ Optical Engines with Cutting Edge OE Packaging Capabilities            </a>
                                 </div>
                                 <div className={pFlag === 2 ? 'title' : 'titleb'} onClick={() => setpFlag(2)}>
                                     NPO/CPO ELSFP & OE Connectivity

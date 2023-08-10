@@ -32,9 +32,6 @@ export default function Market3() {
                 {info?.title}
             </div>
             <div className='info' dangerouslySetInnerHTML={{__html:info?.content}}></div>
-            <div className='img'>
-                <img src={ConstValue.url + "assets/" + info?.img} alt="" />
-            </div>
         </div>
     )
 }
