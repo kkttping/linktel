@@ -67,7 +67,7 @@ export default function AboutHome() {
                 <Row justify={"center"} className='card_two'>
                     <Col sm={24} xl={12} >
                         <div className='card_item'>
-                            <CardProducts link={() => { toPage('company', 'about') }} img={imgitem1} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Company '} titleIn={'Company '} info={['Linktel Technologies was founded in 2011, and through 11 years of rapid development, the company has become one of the mainstream optical component and transceiver suppliers in the world.']} ></CardProducts>
+                            <CardProducts link={() => { toPage('company', 'about') }} img={imgitem1} styleSelf={{ color: '#fff', objectfit: 'cover' }} titleout={'Company '} titleIn={'Company '} info={['Linktel Technologies was founded in 2011, and through more than a decade of rapid development, the company has become one of the mainstream optical component and transceiver suppliers in the world.']} ></CardProducts>
                         </div>
                     </Col>
                     <Col sm={24} xl={12} >
