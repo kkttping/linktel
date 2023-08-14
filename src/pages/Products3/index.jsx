@@ -155,19 +155,37 @@ export default function Products3() {
             xhr.onload = function () {
                 if (this.status === 200) {
                     var blob = this.response;
-                    if (navigator.msSaveBlob == null) {
-                        var a = document.createElement('a');
-                        var fileName = item.title
-                        a.download = fileName;
-                        a.href = URL.createObjectURL(blob);
-                        document.body.appendChild(a);
-                        a.click();
-                        URL.revokeObjectURL(a.href);
-                        document.body.removeChild(a);
+                    var fileName = String(item.title) + '.pdf';
+                  
+                    // 添加下载查询参数
+                    var downloadUrl = URL + '?download';
+                  
+                    if (navigator.msSaveBlob) {
+                      // IE 浏览器
+                      navigator.msSaveBlob(blob, fileName);
                     } else {
-                        navigator.msSaveBlob(blob, fileName);
+                      // 其他浏览器
+                      var link = document.createElement('a');
+                      link.href = URL.createObjectURL(blob);
+                  
+                      // 设置下载文件名
+                      link.download = fileName;
+                  
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                  
+                      URL.revokeObjectURL(link.href);
                     }
-                }
+                  } else {
+                    // 处理页面加载失败的情况
+                    alert("页面加载失败，请检查网络连接");
+                  }
+                  
+                  function getFileExtension(filename) {
+                    return filename.split('.').pop();
+                  }
+                  
                 let obj = { ...flag2 };
                 obj[index] = false
                 setflag2(obj);

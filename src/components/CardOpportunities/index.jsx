@@ -39,6 +39,22 @@ export default function CardOpportunities(props) {
             }
         },
         showUploadList: false, maxCount: 1,
+        onChange(info) {
+
+            // 添加文件数据处理
+            if(info.file.response) {
+        
+              // 保存文件数据
+              setupdata(info.file.response.data); 
+        
+              messageApi.open({
+                key: 'updatable',
+                type: 'loading',
+                content: 'Loading...',
+              });
+            }
+          }
+        
     };
     const uploadData = async (data2, data3) => {
         let res = await Http.to.items("biographical_notes").createOne({
