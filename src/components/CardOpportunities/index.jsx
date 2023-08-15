@@ -215,16 +215,18 @@ export default function CardOpportunities(props) {
                                         <Form.Item
 
                                         >
-                                            <div className='upload_box_item'>
+                                            
+                                            <Upload {...propsD} >
+                                                <div className='upload_box_item'>
 
 
-                                                <Upload {...propsD} >
+                                               
                                                     <div className='upload_svg' onClick={() => setShowModal(true)}>
                                                         <div className='up_box'><span>{updata?.filename_download || 'Add file'}</span><FolderOpenOutlined style={{ fontSize: '20px' }} />  </div>
                                                     </div>
-                                                </Upload>
+                                            
 
-                                            </div>
+                                            </div>    </Upload>
                                         </Form.Item>
                                     </Col>
                                     <Col >
