@@ -20,9 +20,9 @@ export default function Products2() {
 
     const [currid, setcurrid] = useState('');
 
-    const toProducts3 = (id) => {
-        navigate('/products3/' + id + '/' + getParams?.id);
-    }
+    const toProducts3 = (id, name) => {
+        navigate('/products3/' + id + '/' + getParams?.itemId + name);
+      }
     const toPage = (address, routerName) => {
         navigate('/' + address);
     }
@@ -131,7 +131,7 @@ export default function Products2() {
                                                     <span>{item?.name}</span>
                                                     <span dangerouslySetInnerHTML={{ __html: item?.description }}></span>
                                                     <span className='readmore' onClick={() => {
-                                                        toProducts3(item?.id); // retain the original action
+                                                        toProducts3(item?.id,item?.name);   // retain the original action
                                                         document.querySelector('#top').scrollIntoView(); // scroll to #top
                                                     }}>READ MORE<span></span></span>
 
