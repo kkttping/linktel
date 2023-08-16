@@ -21,7 +21,7 @@ export default function Products2() {
     const [currid, setcurrid] = useState('');
 
     const toProducts3 = (id, name) => {
-        navigate('/products3/' + id + '/' + getParams?.itemId + name);
+        navigate('/products3/' + id + '/' + getParams?.itemId + '/' + name);
       }
     const toPage = (address, routerName) => {
         navigate('/' + address);
