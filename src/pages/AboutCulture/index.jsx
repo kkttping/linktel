@@ -31,10 +31,10 @@ export default function AboutCulture() {
             <TopInfo imgBg={imgBg} title={'Culture'} styleSelf={{ bgColor: '#000' }} info1={'LINK TO THE UNKNOWN'} info2={' '} />
             <NavLink title1={'About'} link1={()=>{toPage('about')}} title2={'Culture'}/>
             <AboutNav />
-            <Row justify={'center'}>
+            <Row justify={'center'} className='card_all'>
                 {cultureList.map((item, index) => {
                     return (
-                        <Col key={index}>
+                        <Col key={index} className='card_li'>
                             <div className='card_item'><CardCulture title={item?.title} infoList={[item?.text]} img={ConstValue.url + "assets/" + item?.img
                             } /> </div>
                         </Col>

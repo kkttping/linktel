@@ -1,6 +1,5 @@
 import React from 'react'
 import { Menu, Row, Col } from 'antd'
-import imgBg2 from '@/static/img/an_item2.jpg'
 
 import './index.scss'
 export default function CardNews(props) {
@@ -9,16 +8,13 @@ export default function CardNews(props) {
         <div className='card_news'>
             <Row justify={'center'} className='newstable'>
                 <Col className='newsleft'>
-                    <div className='infomation'onClick={() => {
-                        link(); // 执行原有onclick事件
-                        document.querySelector('#top').scrollIntoView(); // 滚动到#top
-                        }}>
+                    <div className='infomation'>
                         <div className='title' >{title}</div>
                         <div className='info'>
   {infoList?.map(item => {
     return (
       <span key={item} 
-        dangerouslySetInnerHTML={{__html: item.replace(/\n/g, "<br/>") }} 
+        dangerouslySetInnerHTML={{__html: item }} 
       />
     )
   })}

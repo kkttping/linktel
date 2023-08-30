@@ -28,10 +28,7 @@ export default function CardNews2(props) {
                                 return (<span key={item}>{item} <br /></span>)
                             })}
                         </div>
-                        <span className='readmore' onClick={() => {
-                        link(); // 执行原有onclick事件
-                        document.querySelector('#top').scrollIntoView(); // 滚动到#top
-                        }}>READ MORE<span></span></span>
+                        <span className='readmore' >READ MORE<span></span></span>
 
                     </div>
                  </Col>

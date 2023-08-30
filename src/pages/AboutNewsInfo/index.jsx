@@ -85,7 +85,7 @@ export default function AboutNewsInfo() {
 
                     <div className='title_info'>{info?.Title}</div>
 
-                    <div className='title_ps' dangerouslySetInnerHTML={{ __html: info?.Exhibition?.replace(/\n/g, "<br/>") }}>
+                    <div className='title_ps' dangerouslySetInnerHTML={{ __html: info?.Exhibition?.replace(/\n/g, "") }}>
 
                     </div>
                 </div>

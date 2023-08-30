@@ -196,7 +196,7 @@ export default function HomePage() {
                                             <div className='title'>
                                                 {item?.Title}
                                             </div>
-                                            <div className='info' dangerouslySetInnerHTML={{ __html: item?.Exhibition?.replace(/\n/g, "<br/>") }}>
+                                            <div className='info' dangerouslySetInnerHTML={{ __html: item?.Exhibition?.replace(/\n/g, "") }}>
                                             </div>
 
                                             <span

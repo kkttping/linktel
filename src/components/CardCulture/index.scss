@@ -25,28 +25,32 @@
     }
 
     .infomation {
-        font-size: 24px;
-        position: absolute;
-        bottom:0;
-        z-index: 9;
+    font-size: 2rem;
+    position: absolute;
+    text-align: center;
+    bottom: 3rem;
+    z-index: 9;
+    color: #333;
+    height: 25%;
+    padding-left: 10%;
+    padding-right: 10%;
+    min-width:80%;
+    overflow: visible;
+    font-weight: 400;
+    .name{
         color: #fff;
-        padding: 24px;
-        min-height: 100px;
+        top:-56px;
+        font-weight: bold;
+    }
         .info{
-            margin-top: 21px;
-        font-size: 14px;
-        opacity: 0.8;
-
+        font-size: 1rem;
+        background:#F1F5FB;
+        padding:1rem;
+        min-height:4rem;
         }
     }
-    .bg_hover{
-        display: none;
-        position: absolute;
-        top: -6px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(192.53deg, rgba(0,61,166,0.00) 37.427%,rgba(0,61,166,1.00) 99.522%)
-    }
     
+}
+.page_home .content_home {
+    overflow: visible;
 }

@@ -5,7 +5,7 @@
         height: 400px;
     }
     .content{
-        padding: 2rem;
+        
          .quality_top{  
       display: flex;
       line-height: 1.2;  
@@ -34,21 +34,25 @@
 
         }
         .imgList{
-            max-width: 1400px;
-            margin: 0 auto;
+            max-width: 1200px;
+            margin: 0 -12px;
+            margin-left: auto;
+            margin-right: auto;
             .ant-row{
-              gap:1rem;  
+              gap:12px;  
             }         
             .img_box{
-                background-color: rgb(196, 196, 196,0.1);
+                background-color: #f6f7fb;
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
                 align-items: center;
                 width: 22vw;
-                max-width: 320px;
+                max-width: 288px;
                 height: 25vw;
-                max-height: 480px;
+                max-height: 450px;
+                border: 1px solid #ebeef2;
+                border-radius: 8px;
                 img{
                     width: 16vw;
                     max-width: 160px;
