@@ -50,7 +50,7 @@ export default function () {
 						<Route path='products' element={<Products />}></Route>
 						<Route path='products2/:id/:itemId?' element={<Products2 />}></Route>
 
-						<Route path='products3/:id/:id2/:name' element={<Products3 />}></Route>
+						<Route path='products3/:id/:id2/:itemId?/:name' element={<Products3 />}></Route>
 						<Route path='markets' element={<Markets />}></Route>
 						<Route path='markets2' element={<Markets2 />}></Route>
 						<Route path='markets3/:id' element={<Markets3 />}></Route>
