@@ -20,9 +20,16 @@ export default function Products2() {
 
     const [currid, setcurrid] = useState('');
 
-    const toProducts3 = (id, name) => {
-        navigate('/products3/' + id + '/' + getParams?.id + '-' + getParams?.itemId + '-'+ name);
-      }
+    const removeSpacesAndReplaceSlashes = (str) => {
+        const removedSpaces = str.replace(/\s+/g, '');
+        const replacedSlashes = removedSpaces.replace(/\//g, ',');
+        return replacedSlashes;
+      };
+      
+      const toProducts3 = (id, name) => {
+        const cleanedName = removeSpacesAndReplaceSlashes(name);
+        navigate('/products3/' + id + '/' + getParams?.id + '/' + getParams?.itemId + '/' + cleanedName);
+      };
     const toPage = (address, routerName) => {
         navigate('/' + address);
     }
